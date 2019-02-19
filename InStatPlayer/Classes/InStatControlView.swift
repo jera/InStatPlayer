@@ -230,7 +230,6 @@ open class InStatControlView: UIView {
 		customizeControlView()
 	}
 
-
 	open func customizeControlView() {}
 
 	// MARK: - Setup UI

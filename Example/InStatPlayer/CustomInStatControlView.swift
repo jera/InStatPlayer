@@ -36,7 +36,7 @@ class CustomInStatControlView: InStatControlView {
 		let bottomView = UIView()
 		bottomView.translatesAutoresizingMaskIntoConstraints = false
 		bottomView.layer.cornerRadius = 25
-		bottomView.backgroundColor = UIColor.init(white: 0, alpha: 0.8)
+		bottomView.backgroundColor = UIColor.init(red: 107/255.0, green: 25/255.0, blue: 41/255.0, alpha: 0.8)
 		mainMaskView.addSubview(bottomView)
 
 		bottomView.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 30).isActive = true
@@ -45,6 +45,7 @@ class CustomInStatControlView: InStatControlView {
 		bottomView.heightAnchor.constraint(equalToConstant: 100).isActive = true
 
 		bottomView.addSubview(progressView)
+		progressView.trackTintColor = UIColor.init(red: 120/255.0, green: 43/255.0, blue: 58/255.0, alpha: 1)
 		progressView.topAnchor.constraint(equalTo: bottomView.topAnchor, constant: 25).isActive = true
 		progressView.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 25).isActive = true
 		progressView.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -25).isActive = true
