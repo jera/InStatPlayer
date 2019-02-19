@@ -302,7 +302,6 @@ open class InStatControlView: UIView {
 		currentTimeLabel.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 15).isActive = true
 		currentTimeLabel.centerYAnchor.constraint(equalTo: fullscreenButton.centerYAnchor).isActive = true
 
-
 		mainMaskView.addSubview(totalTimeLabel)
 		totalTimeLabel.rightAnchor.constraint(equalTo: fullscreenButton.leftAnchor, constant: -15).isActive = true
 		totalTimeLabel.centerYAnchor.constraint(equalTo: fullscreenButton.centerYAnchor).isActive = true
@@ -322,6 +321,7 @@ open class InStatControlView: UIView {
 	}
 
 	func setupIndicatorViewConstraints() {
+
 		indicatorView.frame = frame
 		addSubview(indicatorView)
 		indicatorView.topAnchor.constraint(equalTo: topAnchor).isActive = true

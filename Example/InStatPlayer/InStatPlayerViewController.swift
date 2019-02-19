@@ -18,7 +18,7 @@ class InStatPlayerViewController: UIViewController {
 
 		let view = UIView()
 		view.translatesAutoresizingMaskIntoConstraints = false
-		let indicator = UIActivityIndicatorView(style: .whiteLarge)
+		let indicator = UIActivityIndicatorView(style: .gray)
 		indicator.translatesAutoresizingMaskIntoConstraints = false
 		indicator.tintColor = .white
 		indicator.startAnimating()
@@ -44,7 +44,7 @@ class InStatPlayerViewController: UIViewController {
 		let item3 = AVPlayerItem(url: url)
 		let queue = [[item0],[item1,item2],[item3]]
 
-		let control = InStatControlView(customIndicatorView: indicatorView)
+		let control = CustomInStatControlView(customIndicatorView: indicatorView)
 		player = InStatPlayerView(queue, customControlView: control)
 		
 		player.translatesAutoresizingMaskIntoConstraints = false

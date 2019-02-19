@@ -100,7 +100,6 @@ open class InStatPlayerView: UIView {
 	override open func layoutSubviews() {
 		super.layoutSubviews()
 
-		backgroundColor = .black
 		switch self.aspectRatio {
 		case .resize:
 
