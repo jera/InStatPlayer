@@ -62,7 +62,7 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(UIImage(named: "airplay"), for: .normal)
+		button.setImage(imageResourcePath("airplay"), for: .normal)
 		button.tintColor = .white
 		button.addTarget(self, action: #selector(airplayDidPress(_:)), for: .touchUpInside)
 		return button
@@ -72,8 +72,8 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(UIImage(named: "play"), for: .normal)
-		button.setImage(UIImage(named: "pause"), for: .selected)
+		button.setImage(imageResourcePath("play"), for: .normal)
+		button.setImage(imageResourcePath("pause"), for: .selected)
 		button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 25, bottom: 18, right: 25)
 		button.tintColor = .white
 		button.addTarget(self, action: #selector(playDidPress(_:)), for: .touchUpInside)
@@ -84,7 +84,7 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(UIImage(named: "next"), for: .normal)
+		button.setImage(imageResourcePath("next"), for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 17, bottom: 20, right: 17)
 		button.tintColor = .white
 		button.addTarget(self, action: #selector(nextDidPress(_:)), for: .touchUpInside)
@@ -95,7 +95,7 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(UIImage(named: "previous"), for: .normal)
+		button.setImage(imageResourcePath("previous"), for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 17, bottom: 20, right: 17)
 		button.tintColor = .white
 		button.addTarget(self, action: #selector(previousDidPress(_:)), for: .touchUpInside)
@@ -106,8 +106,8 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(UIImage(named: "fullscreen"),    for: .normal)
-		button.setImage(UIImage(named: "portialscreen"), for: .selected)
+		button.setImage(imageResourcePath("fullscreen"),    for: .normal)
+		button.setImage(imageResourcePath("portialscreen"), for: .selected)
 		button.addTarget(self, action: #selector(fullScreenDidPress(_:)), for: .touchUpInside)
 		button.tintColor = .white
 		return button
@@ -170,7 +170,7 @@ open class InStatControlView: UIView {
 		slider.value        = 0.0
 		slider.maximumTrackTintColor = UIColor.clear
 		slider.minimumTrackTintColor = UIColor.red
-		slider.setThumbImage(UIImage(named: "sliderThumb"), for: .normal)
+		slider.setThumbImage(imageResourcePath("sliderThumb"), for: .normal)
 		slider.addTarget(self,
 						 action: #selector(sliderTouchBegan(_:)),
 						 for: UIControl.Event.touchDown)
@@ -483,7 +483,7 @@ open class InStatControlView: UIView {
 		isShowControlView(!isMaskShowing)
 	}
 
-	fileprivate func imageResourcePath(_ name: String) -> UIImage? {
+	static func imageResourcePath(_ name: String) -> UIImage? {
 
 		let bundle = Bundle(for: InStatControlView.self)
 		return UIImage(named: name, in: bundle, compatibleWith: nil)
@@ -494,8 +494,8 @@ open class InStatControlView: UIView {
 		if interval.isNaN { return "00:00:00" }
 		let seconds = Int(interval)
 		let time: (Int, Int, Int) = (seconds / 3600,
-									 (seconds % 3600) / 60,
-									 (seconds % 3600) % 60)
+									(seconds % 3600) / 60,
+									(seconds % 3600) % 60)
 		if time.0 == 0 {
 			return String(format: "%02d:%02d", time.1, time.2)
 		}
