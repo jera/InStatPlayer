@@ -14,6 +14,7 @@ public enum InStatPlayerState {
 	case paused
 	case stopped
 	case buffering
+	case bufferingForSomeTime
 	case error
 	case ended
 }
@@ -292,7 +293,7 @@ open class InStatControlView: UIView {
 
 		mainMaskView.addSubview(fullscreenButton)
 		fullscreenButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
-		fullscreenButton.bottomAnchor.constraint(equalTo: mainMaskView.bottomAnchor, constant: -15).isActive = true
+		fullscreenButton.bottomAnchor.constraint(equalTo: mainMaskView.bottomAnchor, constant: -40).isActive = true
 	}
 
 	func setupTimeLabelsConstraints() {
@@ -336,13 +337,15 @@ open class InStatControlView: UIView {
 		self.state = state
 		switch state {
 		case .unknown:
-			print("unknown")
+			indicatorShow(true)
 		case .ready:
-			indicatorView.isHidden = true
+			indicatorShow(false)
 		case .buffering:
-			indicatorView.isHidden = false
+			indicatorShow(true)
+		case .bufferingForSomeTime:
+			indicatorShow(false)
 		case .playing:
-			indicatorView.isHidden = true
+			indicatorShow(false)
 			playButton.isSelected = true
 		case .stopped:
 			playButton.isSelected = false
@@ -351,8 +354,13 @@ open class InStatControlView: UIView {
 		case .paused:
 			playButton.isSelected = false
 		case .ended:
-			isShowControlView(true)
+			print("ended")
 		}
+	}
+
+	func indicatorShow(_ show: Bool) {
+		indicatorView.isHidden = !show
+		mainMaskView.isHidden = show
 	}
 
 	open func playbackChange(_ currentTime: TimeInterval, totalTime: TimeInterval) {
