@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'InStatPlayer_Example' do
+  pod 'InStatPlayer', :path => '../'
+
+  target 'InStatPlayer_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
