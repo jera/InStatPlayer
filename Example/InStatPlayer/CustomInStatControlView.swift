@@ -68,7 +68,7 @@ class CustomInStatControlView: InStatControlView {
 
 		bottomView.addSubview(playButton)
 		playButton.centerXAnchor.constraint(equalTo: bottomView.centerXAnchor).isActive = true
-		playButton.centerYAnchor.constraint(equalTo: airplayButton.centerYAnchor).isActive = true
+		playButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -5).isActive = true
 		nextButton.widthAnchor.constraint(equalToConstant: 68).isActive = true
 		nextButton.heightAnchor.constraint(equalToConstant: 57).isActive = true
 
