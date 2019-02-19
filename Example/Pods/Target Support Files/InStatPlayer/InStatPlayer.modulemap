@@ -1,0 +1,6 @@
+framework module InStatPlayer {
+  umbrella header "InStatPlayer-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,6 @@
+framework module Pods_InStatPlayer_Example {
+  umbrella header "Pods-InStatPlayer_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

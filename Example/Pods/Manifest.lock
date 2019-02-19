@@ -1,0 +1,16 @@
+PODS:
+  - InStatPlayer (0.1.0)
+
+DEPENDENCIES:
+  - InStatPlayer (from `../`)
+
+EXTERNAL SOURCES:
+  InStatPlayer:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  InStatPlayer: 6d8d189c15903d6d6915cd475c23fed66b80c6fa
+
+PODFILE CHECKSUM: deb4c22c112a9c4da72beaf2b85ccb19c764d87a
+
+COCOAPODS: 1.6.0
