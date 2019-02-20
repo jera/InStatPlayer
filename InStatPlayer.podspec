@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InStatPlayer'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = 'InStatPlayer - media player'
 
   # This description is used to generate tags and improve search results.
@@ -23,23 +23,17 @@ Pod::Spec.new do |s|
 
   s.homepage         = 'https://github.com/tularovbeslan/InStatPlayer'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'tularovbeslan@gmail.com' }
+  s.author           = { 'tularovbeslan@gmail.com' => 'tularovbeslan@gmail.com' }
   s.source           = { :git => 'https://github.com/tularovbeslan/InStatPlayer.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/JiromTomson'
   s.swift_version = '4.2'
   s.ios.deployment_target = '10.0'
 
-  s.source_files = 'Classes/**/*'
+  s.source_files = 'InStatPlayer/Classes/**/*'
 
   s.resource_bundles = {
-	  'InStatPlayer' => ['InStatPlayer/Assets/*.png']
+	  'InStatPlayer' => ['InStatPlayer/Assets/*.xcassets']
   }
   s.frameworks = 'UIKit', 'MediaPlayer', 'AVFoundation'
-  s.source_files = 'InStatPlayer/Classes/**/*'
-  
-  s.resource_bundles = {
-	  'InStatPlayer' => ['InStatPlayer/Assets/*.png']
-  }
-
   # s.dependency 'AFNetworking', '~> 2.3'
 end
