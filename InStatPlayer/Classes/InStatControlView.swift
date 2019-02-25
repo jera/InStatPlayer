@@ -64,7 +64,9 @@ open class InStatControlView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setImage(imageResourcePath("airplay"), for: .normal)
 		button.tintColor = .white
-		button.addTarget(self, action: #selector(airplayDidPress(_:)), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(airplayDidPress(_:)),
+						 for: .touchUpInside)
 		return button
 	}()
 
@@ -76,7 +78,9 @@ open class InStatControlView: UIView {
 		button.setImage(imageResourcePath("pause"), for: .selected)
 		button.imageEdgeInsets = UIEdgeInsets(top: 18, left: 25, bottom: 18, right: 25)
 		button.tintColor = .white
-		button.addTarget(self, action: #selector(playDidPress(_:)), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(playDidPress),
+						 for: .touchUpInside)
 		return button
 	}()
 
@@ -87,7 +91,9 @@ open class InStatControlView: UIView {
 		button.setImage(imageResourcePath("next"), for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 17, bottom: 20, right: 17)
 		button.tintColor = .white
-		button.addTarget(self, action: #selector(nextDidPress(_:)), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(nextDidPress),
+						 for: .touchUpInside)
 		return button
 	}()
 
@@ -98,7 +104,9 @@ open class InStatControlView: UIView {
 		button.setImage(imageResourcePath("previous"), for: .normal)
 		button.imageEdgeInsets = UIEdgeInsets(top: 20, left: 17, bottom: 20, right: 17)
 		button.tintColor = .white
-		button.addTarget(self, action: #selector(previousDidPress(_:)), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(previousDidPress),
+						 for: .touchUpInside)
 		return button
 	}()
 
@@ -108,7 +116,9 @@ open class InStatControlView: UIView {
 		button.translatesAutoresizingMaskIntoConstraints = false
 		button.setImage(imageResourcePath("fullscreen"),    for: .normal)
 		button.setImage(imageResourcePath("portialscreen"), for: .selected)
-		button.addTarget(self, action: #selector(fullScreenDidPress(_:)), for: .touchUpInside)
+		button.addTarget(self,
+						 action: #selector(fullScreenDidPress),
+						 for: .touchUpInside)
 		button.tintColor = .white
 		return button
 	}()
@@ -125,8 +135,8 @@ open class InStatControlView: UIView {
 	}()
 
 	open var subtitleLabel: UILabel = {
-		let label = UILabel()
 
+		let label = UILabel()
 		label.translatesAutoresizingMaskIntoConstraints = false
 		label.numberOfLines = 0
 		label.textAlignment = .center
@@ -194,7 +204,7 @@ open class InStatControlView: UIView {
 	}()
 
 	open weak var delegate: InStatControlViewDelegate?
-	open weak var player: InStatPlayerView?
+	open weak var playerView: InStatPlayerView?
 	fileprivate var customIndicatorView: UIView?
 	fileprivate var state: InStatPlayerState = .unknown
 	fileprivate var isScrubbing: Bool = false
@@ -215,12 +225,14 @@ open class InStatControlView: UIView {
 
 	override public init(frame: CGRect) {
 		super.init(frame: frame)
+
 		setupUIComponents()
 		customizeControlView()
 	}
 
 	public init(customIndicatorView: UIView?) {
 		super.init(frame:CGRect.zero)
+
 		self.customIndicatorView = customIndicatorView
 		setupUIComponents()
 		customizeControlView()
@@ -228,6 +240,7 @@ open class InStatControlView: UIView {
 
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
+
 		setupUIComponents()
 		customizeControlView()
 	}
@@ -337,25 +350,17 @@ open class InStatControlView: UIView {
 
 		self.state = state
 		switch state {
-		case .unknown:
-			indicatorShow(true)
-		case .ready:
-			indicatorShow(false)
-		case .buffering:
-			indicatorShow(true)
-		case .bufferingForSomeTime:
-			indicatorShow(false)
+		case .unknown: indicatorShow(true)
+		case .ready: indicatorShow(false)
+		case .buffering: indicatorShow(true)
+		case .bufferingForSomeTime: indicatorShow(false)
 		case .playing:
 			indicatorShow(false)
 			playButton.isSelected = true
-		case .stopped:
-			playButton.isSelected = false
-		case .error:
-			print("error")
-		case .paused:
-			playButton.isSelected = false
-		case .ended:
-			print("ended")
+		case .stopped: playButton.isSelected = false
+		case .error: print("error")
+		case .paused: playButton.isSelected = false
+		case .ended: print("ended")
 		}
 	}
 
@@ -369,7 +374,8 @@ open class InStatControlView: UIView {
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
 		progressSlider.value = Float(currentTime) / Float(totalTime)
 
-		if let player = player {
+		if let player = playerView {
+
 			nextButton.isEnabled = player.isLastItem() ? false : true
 			previousButton.isEnabled = player.isFirstItem() ? false : true
 		}
@@ -383,6 +389,7 @@ open class InStatControlView: UIView {
 
 		self.isMaskShowing = isShow
 		UIView.animate(withDuration: 0.3, animations: {
+
 			self.mainMaskView.backgroundColor = UIColor(white: 0, alpha: isShow ? 0.5 : 0.0)
 			self.mainMaskView.alpha = isShow ? 1.0 : 0.0
 			self.layoutIfNeeded()
@@ -393,6 +400,7 @@ open class InStatControlView: UIView {
 
 		cancelAutoFadeControlView()
 		delayItem = DispatchWorkItem { [weak self] in
+
 			guard let `self` = self else { return }
 			self.isShowControlView(false)
 		}
@@ -400,38 +408,26 @@ open class InStatControlView: UIView {
 									  execute: delayItem!)
 	}
 
-	open func cancelAutoFadeControlView() {
-		delayItem?.cancel()
-	}
+	open func cancelAutoFadeControlView() { delayItem?.cancel() }
 
 	// MARK: - Actions
 
-	@objc open func playDidPress(_ button: UIButton) {
+	@objc open func playDidPress() {
 
-		state == .playing ? player?.pause() : player?.play()
+		state == .playing ? playerView?.pause() : playerView?.play()
 		playButton.isSelected = state == .playing ? true : false
 	}
 
-	@objc open func stopDidPress(_ button: UIButton) {
-		player?.stop()
-	}
+	@objc open func stopDidPress() { playerView?.stop() }
 
-	@objc open func nextDidPress(_ button: UIButton) {
-		player?.next()
-	}
+	@objc open func nextDidPress() { playerView?.next() }
 
-	@objc open func previousDidPress(_ button: UIButton) {
-		player?.previous()
-	}
+	@objc open func previousDidPress() { playerView?.previous() }
 
-	@objc open func fullScreenDidPress(_ button: UIButton) {
+	@objc open func fullScreenDidPress() {
 
-		guard let player = player else { return }
+		guard let player = playerView else { return }
 		player.delegate?.playerDidFullscreen?(player)
-	}
-
-	@objc open func schromcastDidPress(_ button: UIButton) {
-		print("schromcastDidPress")
 	}
 
 	@objc open func airplayDidPress(_ button: UIButton) {
@@ -449,13 +445,9 @@ open class InStatControlView: UIView {
 		airplayVolume.removeFromSuperview()
 	}
 
-	@objc open func shareDidPress(_ button: UIButton) {
-		print("shareDidPress")
-	}
+	@objc open func shareDidPress() { print("shareDidPress") }
 
-	@objc open func menuDidPress(_ button: UIButton) {
-		print("menuDidPress")
-	}
+	@objc open func menuDidPress() { print("menuDidPress") }
 
 	@objc func sliderTouchBegan(_ sender: UISlider)  {
 

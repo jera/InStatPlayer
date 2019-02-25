@@ -19,7 +19,7 @@ open class InStatPlayerView: UIView {
 	fileprivate var controlView: InStatControlView!
 	fileprivate var customControlView: InStatControlView?
 	fileprivate var playerLayer: AVPlayerLayer?
-	fileprivate var player: AVPlayer?
+	public var player: AVPlayer?
 	public var autoPlay: Bool = true
 	public var isPlayLoops: Bool = false
 	public var queue: [[AVPlayerItem]] = [] {
@@ -52,6 +52,7 @@ open class InStatPlayerView: UIView {
 
 	public convenience init(_ queue: [[AVPlayerItem]], customControlView: InStatControlView?) {
 		self.init()
+
 		self.customControlView = customControlView
 		self.queue = queue
 		setupControls()
@@ -60,6 +61,7 @@ open class InStatPlayerView: UIView {
 
 	public convenience init(_ queue: [[AVPlayerItem]]) {
 		self.init()
+
 		self.queue = queue
 		setupControls()
 		setupPlayer()
@@ -67,6 +69,7 @@ open class InStatPlayerView: UIView {
 
 	public convenience init(_ playerItem: AVPlayerItem) {
 		self.init()
+
 		self.playerItem = playerItem
 		setupControls()
 		setupPlayer()
@@ -78,19 +81,19 @@ open class InStatPlayerView: UIView {
 
 	public init(customControlView: InStatControlView?) {
 		super.init(frame:CGRect.zero)
+
 		self.customControlView = customControlView
 		setupControls()
 		setupPlayer()
 	}
 
 	deinit {
-
-		self.player?.pause()
-		self.player = nil
+		prepareToDeinit()
 	}
 
 	open func prepareToDeinit() {
 
+		self.player?.pause()
 		self.shouldSeekTo = 0
 		self.timer?.invalidate()
 		self.playerLayer?.removeFromSuperlayer()
@@ -139,7 +142,7 @@ open class InStatPlayerView: UIView {
 		controlView.translatesAutoresizingMaskIntoConstraints = false
 		addSubview(controlView)
 		controlView.delegate = self
-		controlView.player   = self
+		controlView.playerView   = self
 		controlView.topAnchor.constraint(equalTo: topAnchor).isActive = true
 		controlView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 		controlView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
@@ -148,9 +151,7 @@ open class InStatPlayerView: UIView {
 
 	fileprivate func setupPlayer() {
 
-		if queue.isEmpty && playerItem == nil {
-			return
-		}
+		if queue.isEmpty && playerItem == nil { return }
 
 		let item: AVPlayerItem!
 		if queue.isEmpty {
@@ -195,7 +196,11 @@ open class InStatPlayerView: UIView {
 
 			let currentTime = CMTimeGetSeconds(self.player!.currentTime())
 			let totalTime   = TimeInterval(item.duration.value) / TimeInterval(item.duration.timescale)
-			delegate?.player?(self, didChangeTo: currentTime, for: item, at: indexPath, total: totalTime)
+			delegate?.player?(self,
+							  didChangeTo: currentTime,
+							  for: item,
+							  at: indexPath,
+							  total: totalTime)
 			controlView.stateChange(.playing)
 			controlView.totalDuration = totalTime
 			totalDuration = totalTime
@@ -203,16 +208,29 @@ open class InStatPlayerView: UIView {
 		}
 
 		if let player = player {
+
 			if item.isPlaybackLikelyToKeepUp || item.isPlaybackBufferFull {
-				delegate?.player?(self, bufferingReady: item, at: indexPath)
+				delegate?.player?(self,
+								  bufferingReady: item,
+								  at: indexPath)
 			} else if item.status == .failed {
-				delegate?.player?(self, didFail: item.error!, item: item, at: indexPath)
+
+				delegate?.player?(self,
+								  didFail: item.error!,
+								  item: item,
+								  at: indexPath)
 				controlView.stateChange(.error)
 			}  else if item.status == .unknown {
-				delegate?.player?(self, bufferingUnknown: item, at: indexPath)
+
+				delegate?.player?(self,
+								  bufferingUnknown: item,
+								  at: indexPath)
 				controlView.stateChange(.unknown)
 			} else {
-				delegate?.player?(self, bufferingDelayed: item, at: indexPath)
+
+				delegate?.player?(self,
+								  bufferingDelayed: item,
+								  at: indexPath)
 				controlView.stateChange(.buffering)
 			}
 
@@ -221,18 +239,28 @@ open class InStatPlayerView: UIView {
 
 				let bufferedTime = CMTimeGetSeconds(CMTimeAdd(timeRange.start, timeRange.duration))
 				let totalTime   = TimeInterval(item.duration.value) / TimeInterval(item.duration.timescale)
-				delegate?.player?(self, bufferingTimeDidChangeTo: bufferedTime, item: item, at: indexPath, total: totalTime)
+				delegate?.player?(self,
+								  bufferingTimeDidChangeTo: bufferedTime,
+								  item: item,
+								  at: indexPath,
+								  total: totalTime)
 				controlView.bufferChange(bufferedTime, total: totalTime)
 			}
 
 			if player.rate == 0.0 {
+
 				if player.error != nil {
-					delegate?.player?(self, didFail: player.error!, item: item, at: indexPath)
+
+					delegate?.player?(self,
+									  didFail: player.error!,
+									  item: item,
+									  at: indexPath)
 					controlView.stateChange(.error)
 					return
 				}
 
 				if let currentItem = player.currentItem {
+
 					if player.currentTime() >= currentItem.duration {
 
 						delegate?.player?(self, didEnd: item, at: indexPath)
