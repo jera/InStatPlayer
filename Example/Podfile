@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'InStatPlayer_Example' do
   pod 'InStatPlayer', :path => '../'
+	pod 'lottie-ios'
 
   target 'InStatPlayer_Tests' do
     inherit! :search_paths

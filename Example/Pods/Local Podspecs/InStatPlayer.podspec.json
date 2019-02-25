@@ -1,9 +1,9 @@
 {
   "name": "InStatPlayer",
-  "version": "0.1.0",
-  "summary": "A short description of InStatPlayer.",
-  "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/tularovbeslan@gmail.com/InStatPlayer",
+  "version": "0.1.2",
+  "summary": "InStatPlayer - media player",
+  "description": "InStatPlayer - customizable media player",
+  "homepage": "https://github.com/tularovbeslan/InStatPlayer",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,23 @@
     "tularovbeslan@gmail.com": "tularovbeslan@gmail.com"
   },
   "source": {
-    "git": "https://github.com/tularovbeslan@gmail.com/InStatPlayer.git",
-    "tag": "0.1.0"
+    "git": "https://github.com/tularovbeslan/InStatPlayer.git",
+    "tag": "0.1.2"
   },
+  "social_media_url": "https://twitter.com/JiromTomson",
+  "swift_version": "4.2",
   "platforms": {
-    "ios": "8.0"
+    "ios": "10.0"
   },
-  "source_files": "InStatPlayer/Classes/**/*"
+  "source_files": "InStatPlayer/Classes/**/*",
+  "resource_bundles": {
+    "InStatPlayer": [
+      "InStatPlayer/Assets/*.xcassets"
+    ]
+  },
+  "frameworks": [
+    "UIKit",
+    "MediaPlayer",
+    "AVFoundation"
+  ]
 }

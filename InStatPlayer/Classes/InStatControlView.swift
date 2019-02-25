@@ -197,11 +197,13 @@ open class InStatControlView: UIView {
 	open weak var player: InStatPlayerView?
 	fileprivate var customIndicatorView: UIView?
 	fileprivate var state: InStatPlayerState = .unknown
+	fileprivate var isScrubbing: Bool = false
 	open var delayItem: DispatchWorkItem?
 	open var totalDuration: TimeInterval = 0
 	open var isFullscreen  = false
 	open var isMaskShowing = true
 	open var tapGesture: UITapGestureRecognizer!
+
 
 	fileprivate var isFullScreen: Bool {
 		get {
@@ -238,6 +240,7 @@ open class InStatControlView: UIView {
 
 		if let customView = customIndicatorView {
 			indicatorView = customView
+			indicatorView.translatesAutoresizingMaskIntoConstraints = false
 		}
 
 		tapGesture = UITapGestureRecognizer(target: self, action: #selector(onTapGestureTapped(_:)))
@@ -321,12 +324,11 @@ open class InStatControlView: UIView {
 
 	func setupIndicatorViewConstraints() {
 
-		indicatorView.frame = frame
 		addSubview(indicatorView)
-		indicatorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
-		indicatorView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
-		indicatorView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
-		indicatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+		indicatorView.widthAnchor.constraint(equalToConstant: 50).isActive = true
+		indicatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
+		indicatorView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor).isActive = true
+		indicatorView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor).isActive = true
 	}
 
 	// MARK: - Helpers
@@ -357,16 +359,16 @@ open class InStatControlView: UIView {
 		}
 	}
 
-	func indicatorShow(_ show: Bool) {
+	open func indicatorShow(_ show: Bool) {
 		indicatorView.isHidden = !show
-		mainMaskView.isHidden = show
 	}
 
 	open func playbackChange(_ currentTime: TimeInterval, totalTime: TimeInterval) {
 
 		currentTimeLabel.text	= formatSecondsToString(currentTime)
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
-		progressSlider.value	= Float(currentTime) / Float(totalTime)
+		progressSlider.value = Float(currentTime) / Float(totalTime)
+
 		if let player = player {
 			nextButton.isEnabled = player.isLastItem() ? false : true
 			previousButton.isEnabled = player.isFirstItem() ? false : true
@@ -470,12 +472,14 @@ open class InStatControlView: UIView {
 		delegate?.controlView(controlView: self,
 							  slider: sender,
 							  onSliderEvent: .valueChanged)
+		isScrubbing = true
 	}
 
 	@objc func sliderTouchEnded(_ sender: UISlider)  {
 
 		autoFadeControlView()
 		delegate?.controlView(controlView: self, slider: sender, onSliderEvent: .touchUpInside)
+		isScrubbing = false
 	}
 
 	@objc open func onTapGestureTapped(_ gesture: UITapGestureRecognizer) {

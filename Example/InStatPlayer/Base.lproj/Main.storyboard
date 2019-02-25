@@ -20,8 +20,31 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="9Ah-8e-zd4">
+                                <rect key="frame" x="16" y="27" width="343" height="29"/>
+                                <segments>
+                                    <segment title="resize"/>
+                                    <segment title="Aspect"/>
+                                    <segment title="AspectFill"/>
+                                    <segment title="16/9"/>
+                                    <segment title="4/3"/>
+                                </segments>
+                                <connections>
+                                    <action selector="changeRatio:" destination="vXZ-lx-hvc" eventType="valueChanged" id="sQf-V5-jaG"/>
+                                </connections>
+                            </segmentedControl>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="9Ah-8e-zd4" firstAttribute="trailing" secondItem="kh9-bI-dsS" secondAttribute="trailingMargin" id="5ED-Ra-pnW"/>
+                            <constraint firstItem="9Ah-8e-zd4" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="8" id="Egj-bi-FV2"/>
+                            <constraint firstItem="9Ah-8e-zd4" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="zSD-2x-Otb"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="segmentedControl" destination="9Ah-8e-zd4" id="X5z-1g-J3B"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

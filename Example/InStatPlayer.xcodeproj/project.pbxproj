@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		570EAA02222337A300D14929 /* InStatIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 570EAA01222337A300D14929 /* InStatIndicator.json */; };
+		570EAA042223382600D14929 /* InStatIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EAA032223382600D14929 /* InStatIndicatorView.swift */; };
 		577D60AB221C7D3E00ED9642 /* CustomInStatControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* InStatPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* InStatPlayerViewController.swift */; };
@@ -31,6 +33,8 @@
 /* Begin PBXFileReference section */
 		2E61B7AE7FC529A95D532D29 /* Pods-InStatPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InStatPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-InStatPlayer_Example/Pods-InStatPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		56BBD9B80B0250C109D44F7E /* Pods-InStatPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InStatPlayer_Tests.debug.xcconfig"; path = "Target Support Files/Pods-InStatPlayer_Tests/Pods-InStatPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		570EAA01222337A300D14929 /* InStatIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InStatIndicator.json; sourceTree = "<group>"; };
+		570EAA032223382600D14929 /* InStatIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InStatIndicatorView.swift; sourceTree = "<group>"; };
 		577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInStatControlView.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InStatPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -95,6 +99,8 @@
 		607FACD21AFB9204008FA782 /* Example for InStatPlayer */ = {
 			isa = PBXGroup;
 			children = (
+				570EAA032223382600D14929 /* InStatIndicatorView.swift */,
+				570EAA01222337A300D14929 /* InStatIndicator.json */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* InStatPlayerViewController.swift */,
 				577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */,
@@ -250,6 +256,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				570EAA02222337A300D14929 /* InStatIndicator.json in Resources */,
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
@@ -276,12 +283,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-InStatPlayer_Example/Pods-InStatPlayer_Example-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/InStatPlayer/InStatPlayer.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/InStatPlayer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -342,6 +351,7 @@
 				607FACD81AFB9204008FA782 /* InStatPlayerViewController.swift in Sources */,
 				577D60AB221C7D3E00ED9642 /* CustomInStatControlView.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				570EAA042223382600D14929 /* InStatIndicatorView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

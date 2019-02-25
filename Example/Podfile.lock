@@ -1,16 +1,23 @@
 PODS:
-  - InStatPlayer (0.1.0)
+  - InStatPlayer (0.1.2)
+  - lottie-ios (2.5.2)
 
 DEPENDENCIES:
   - InStatPlayer (from `../`)
+  - lottie-ios
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - lottie-ios
 
 EXTERNAL SOURCES:
   InStatPlayer:
     :path: "../"
 
 SPEC CHECKSUMS:
-  InStatPlayer: 6d8d189c15903d6d6915cd475c23fed66b80c6fa
+  InStatPlayer: d8b46a5de38cd04c23e100010fea2bcc22989f70
+  lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
 
-PODFILE CHECKSUM: deb4c22c112a9c4da72beaf2b85ccb19c764d87a
+PODFILE CHECKSUM: e9188c34477e51575dc95582a11cc7ec645dd780
 
 COCOAPODS: 1.6.0

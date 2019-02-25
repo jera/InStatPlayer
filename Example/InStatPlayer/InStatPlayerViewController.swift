@@ -13,26 +13,18 @@ import AVFoundation
 class InStatPlayerViewController: UIViewController {
 
 	var player: InStatPlayerView!
-
-	open var indicatorView: UIView = {
-
-		let view = UIView()
-		view.translatesAutoresizingMaskIntoConstraints = false
-		let indicator = UIActivityIndicatorView(style: .gray)
-		indicator.translatesAutoresizingMaskIntoConstraints = false
-		indicator.tintColor = .white
-		indicator.startAnimating()
-		view.addSubview(indicator)
-		indicator.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-		indicator.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-		return view
-	}()
+	@IBOutlet weak var segmentedControl: UISegmentedControl!
+	open var indicatorView = InStatIndicatorView()
 
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 
+		indicatorView.translatesAutoresizingMaskIntoConstraints = false
+		indicatorView.startAnimation()
 		setupPlayer()
 		setupPlayerConstraints()
+
+		view.addSubview(segmentedControl)
 	}
 
 	func setupPlayer() {
@@ -42,13 +34,15 @@ class InStatPlayerViewController: UIViewController {
 		let item1 = AVPlayerItem(url: url)
 		let item2 = AVPlayerItem(url: url)
 		let item3 = AVPlayerItem(url: url)
+
+		
 		let queue = [[item0],[item1,item2],[item3]]
 
 		let control = CustomInStatControlView(customIndicatorView: indicatorView)
 		player = InStatPlayerView(queue, customControlView: control)
-		
 		player.translatesAutoresizingMaskIntoConstraints = false
 		view.addSubview(player)
+
 	}
 
 	func setupPlayerConstraints() {
@@ -59,5 +53,22 @@ class InStatPlayerViewController: UIViewController {
 		player.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
 	}
 
-}
+	@IBAction func changeRatio(_ sender: UISegmentedControl) {
 
+		switch sender.selectedSegmentIndex {
+		case 0:
+			player.aspectRatio = .resize
+		case 1:
+			player.aspectRatio = .resizeAspect
+		case 2:
+			player.aspectRatio = .resizeAspectFill
+		case 3:
+			player.aspectRatio = .sixteenToNINE
+		case 4:
+			player.aspectRatio = .fourToTHREE
+		default:
+			break
+		}
+	}
+
+}

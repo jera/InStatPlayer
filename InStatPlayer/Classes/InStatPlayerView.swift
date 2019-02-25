@@ -33,7 +33,8 @@ open class InStatPlayerView: UIView {
 	open var videoGravity = AVLayerVideoGravity.resizeAspect {
 		didSet { self.playerLayer?.videoGravity = videoGravity }
 	}
-	var aspectRatio: InStatPlayerAspectRatio = .resizeAspect {
+
+	open var aspectRatio: InStatPlayerAspectRatio = .resizeAspect {
 		didSet { self.setNeedsLayout() }
 	}
 
@@ -359,7 +360,7 @@ open class InStatPlayerView: UIView {
 		playItemAt(indexPath, fromItems: queue)
 	}
 
-	open func seek(to secounds: TimeInterval, completion:(()->Void)?) {
+	open func seek(to secounds: TimeInterval) {
 		if secounds.isNaN {
 			return
 		}
@@ -368,7 +369,6 @@ open class InStatPlayerView: UIView {
 			let draggedTime = CMTimeMake(value: Int64(secounds), timescale: 1)
 			self.player!.seek(to: draggedTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero, completionHandler: { (finished) in
 			})
-			completion?()
 		} else {
 			self.shouldSeekTo = secounds
 		}
@@ -416,18 +416,17 @@ extension InStatPlayerView: InStatControlViewDelegate {
 	public func controlView(controlView: InStatControlView, slider: UISlider, onSliderEvent event: UIControl.Event) {
 		switch event {
 		case .touchDown:
+			pause()
 			if self.player?.currentItem?.status == AVPlayerItem.Status.readyToPlay {
 				self.timer?.fireDate = Date.distantFuture
 			}
-
 		case .touchUpInside :
+			play()
+		case .valueChanged:
 			let target = self.totalDuration * Double(slider.value)
 			guard let item = player?.currentItem else { return }
 			delegate?.player?(self, seekTo: target, for: item, at: indexPath)
-			seek(to: target) { [weak self] in
-				guard let `self` = self else { return }
-				self.play()
-			}
+			seek(to: target)
 		default:
 			break
 		}

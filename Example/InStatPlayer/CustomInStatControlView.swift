@@ -84,5 +84,11 @@ class CustomInStatControlView: InStatControlView {
 		nextButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor).isActive = true
 		nextButton.widthAnchor.constraint(equalToConstant: 68).isActive = true
 		nextButton.heightAnchor.constraint(equalToConstant: 57).isActive = true
+
+		indicatorView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+		indicatorView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+		indicatorView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+		indicatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+
 	}
 }
