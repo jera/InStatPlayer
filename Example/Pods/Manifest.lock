@@ -1,5 +1,5 @@
 PODS:
-  - InStatPlayer (0.1.2)
+  - InStatPlayer (0.1.3)
   - lottie-ios (2.5.2)
 
 DEPENDENCIES:
@@ -15,7 +15,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  InStatPlayer: d8b46a5de38cd04c23e100010fea2bcc22989f70
+  InStatPlayer: cda90a1a363a56eed5d2c851a5eb28d18c44b3a1
   lottie-ios: 3fef45d3fabe63e3c7c2eb603dd64ddfffc73062
 
 PODFILE CHECKSUM: e9188c34477e51575dc95582a11cc7ec645dd780

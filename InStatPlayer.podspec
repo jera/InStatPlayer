@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InStatPlayer'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = 'InStatPlayer - media player'
 
   # This description is used to generate tags and improve search results.
@@ -35,5 +35,4 @@ Pod::Spec.new do |s|
 	  'InStatPlayer' => ['InStatPlayer/Assets/*.xcassets']
   }
   s.frameworks = 'UIKit', 'MediaPlayer', 'AVFoundation'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
