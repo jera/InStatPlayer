@@ -63,6 +63,10 @@ class CustomInStatControlView: InStatControlView {
 		totalTimeLabel.topAnchor.constraint(equalTo: progressSlider.topAnchor, constant: 20).isActive = true
 		totalTimeLabel.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -25).isActive = true
 
+		bottomView.addSubview(fullscreenButton)
+		fullscreenButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -15).isActive = true
+		fullscreenButton.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -25).isActive = true
+
 		bottomView.addSubview(airplayButton)
 		airplayButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -15).isActive = true
 		airplayButton.leftAnchor.constraint(equalTo: bottomView.leftAnchor, constant: 25).isActive = true
@@ -89,6 +93,5 @@ class CustomInStatControlView: InStatControlView {
 		indicatorView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
 		indicatorView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
 		indicatorView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
-
 	}
 }

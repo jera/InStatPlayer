@@ -240,9 +240,6 @@ open class InStatControlView: UIView {
 
 	required public init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
-
-		setupUIComponents()
-		customizeControlView()
 	}
 
 	open func customizeControlView() {}
@@ -299,7 +296,7 @@ open class InStatControlView: UIView {
 
 		mainMaskView.addSubview(airplayButton)
 		airplayButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -25).isActive = true
-		airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 50).isActive = true
+		airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
 		airplayButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
 		airplayButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
 	}
@@ -308,7 +305,7 @@ open class InStatControlView: UIView {
 
 		mainMaskView.addSubview(fullscreenButton)
 		fullscreenButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
-		fullscreenButton.bottomAnchor.constraint(equalTo: mainMaskView.bottomAnchor, constant: -40).isActive = true
+		fullscreenButton.bottomAnchor.constraint(equalTo: mainMaskView.bottomAnchor, constant: -15).isActive = true
 	}
 
 	func setupTimeLabelsConstraints() {

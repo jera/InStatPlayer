@@ -11,7 +11,7 @@ open class InStatPlayerView: UIView {
 
 	// MARK: - Properties
 
-	weak var delegate: InStatPlayerDelegate?
+	public weak var delegate: InStatPlayerDelegate?
 	fileprivate var totalDuration   : TimeInterval = 0
 	fileprivate var shouldSeekTo    : TimeInterval = 0
 	fileprivate var timer: Timer?
@@ -22,6 +22,7 @@ open class InStatPlayerView: UIView {
 	public var player: AVPlayer?
 	public var autoPlay: Bool = true
 	public var isPlayLoops: Bool = false
+	public var isFullScreen: Bool = false
 	public var queue: [[AVPlayerItem]] = [] {
 		didSet { setupPlayer() }
 	}
@@ -93,6 +94,9 @@ open class InStatPlayerView: UIView {
 
 	open func prepareToDeinit() {
 
+		NotificationCenter.default.removeObserver(self,
+												  name: UIDevice.orientationDidChangeNotification,
+												  object: nil)
 		self.player?.pause()
 		self.shouldSeekTo = 0
 		self.timer?.invalidate()
@@ -150,6 +154,11 @@ open class InStatPlayerView: UIView {
 	}
 
 	fileprivate func setupPlayer() {
+
+		NotificationCenter.default.addObserver(self,
+											   selector: #selector(orientationDidChange),
+											   name: UIDevice.orientationDidChangeNotification,
+											   object: nil)
 
 		if queue.isEmpty && playerItem == nil { return }
 
@@ -274,12 +283,28 @@ open class InStatPlayerView: UIView {
 	}
 
 	func playerDidEnd() {
+
 		if isLastItem() {
 			stop()
 			controlView.stateChange(.ended)
 		} else {
 			next()
 		}
+	}
+
+	@objc fileprivate func orientationDidChange() {
+
+		switch UIDevice.current.orientation {
+		case .landscapeLeft, .landscapeRight: fullScreenButton(isSelected: true)
+		case .portrait, .portraitUpsideDown: fullScreenButton(isSelected: false)
+		default: break
+		}
+	}
+
+	fileprivate func fullScreenButton(isSelected: Bool) {
+
+		isFullScreen = isSelected
+		controlView.fullscreenButton.isSelected = isSelected
 	}
 
 	// MARK: - Control actions

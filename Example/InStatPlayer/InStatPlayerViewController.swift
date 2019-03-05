@@ -10,11 +10,20 @@ import UIKit
 import InStatPlayer
 import AVFoundation
 
-class InStatPlayerViewController: UIViewController {
+class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 
 	var player: InStatPlayerView!
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	open var indicatorView = InStatIndicatorView()
+
+
+	var isStatusBarHidden: Bool = false {
+		didSet{
+			UIView.animate(withDuration: 0.5) { () -> Void in
+				self.setNeedsStatusBarAppearanceUpdate()
+			}
+		}
+	}
 
 	open override func viewDidLoad() {
 		super.viewDidLoad()
@@ -41,6 +50,7 @@ class InStatPlayerViewController: UIViewController {
 		let control = CustomInStatControlView(customIndicatorView: indicatorView)
 		player = InStatPlayerView(queue, customControlView: control)
 		player.translatesAutoresizingMaskIntoConstraints = false
+		player.delegate = self
 		view.addSubview(player)
 
 	}
@@ -71,4 +81,23 @@ class InStatPlayerViewController: UIViewController {
 		}
 	}
 
+	func playerDidFullscreen(_ player: InStatPlayerView) {
+
+		if player.isFullScreen {
+			UIDevice.current.setValue(UIInterfaceOrientation.portrait.rawValue, forKey: "orientation")
+			isStatusBarHidden = false
+		} else {
+			UIDevice.current.setValue(UIInterfaceOrientation.landscapeRight.rawValue, forKey: "orientation")
+			isStatusBarHidden = true
+		}
+	}
+
+	override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+		return .slide
+	}
+
+	override var prefersStatusBarHidden: Bool{
+		return isStatusBarHidden
+	}
 }
+
