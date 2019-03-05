@@ -480,7 +480,7 @@ open class InStatControlView: UIView {
 
 	static func imageResourcePath(_ name: String) -> UIImage? {
 
-		let bundle = Bundle(for: InStatControlView.self)
+		let bundle = Bundle(for: InStatPlayerView.self)
 		return UIImage(named: name, in: bundle, compatibleWith: nil)
 	}
 
