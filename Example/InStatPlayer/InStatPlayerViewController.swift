@@ -52,7 +52,6 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 		player.translatesAutoresizingMaskIntoConstraints = false
 		player.delegate = self
 		view.addSubview(player)
-
 	}
 
 	func setupPlayerConstraints() {
@@ -67,10 +66,16 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 
 		switch sender.selectedSegmentIndex {
 		case 0:
+			let index = IndexPath(row: 0, section: 0)
+			player.playItemAt(index)
 			player.aspectRatio = .resize
 		case 1:
+			let index = IndexPath(row: 1, section: 0)
+			player.playItemAt(index)
 			player.aspectRatio = .resizeAspect
 		case 2:
+			let index = IndexPath(row: 2, section: 0)
+			player.playItemAt(index)
 			player.aspectRatio = .resizeAspectFill
 		case 3:
 			player.aspectRatio = .sixteenToNINE

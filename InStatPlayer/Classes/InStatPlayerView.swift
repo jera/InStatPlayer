@@ -311,7 +311,7 @@ open class InStatPlayerView: UIView {
 
 	// MARK: - Control actions
 
-	func playItemAt(_ indexPath: IndexPath, fromItems items: [[AVPlayerItem]]) {
+	public func playItemAt(_ indexPath: IndexPath, fromItems items: [[AVPlayerItem]]) {
 
 		DispatchQueue.global(qos: .userInteractive).async {
 			if items.count > indexPath.section {
@@ -331,7 +331,13 @@ open class InStatPlayerView: UIView {
 		}
 	}
 
-	func playItem(_ item: AVPlayerItem) {
+	public func playItemAt(_ indexPath: IndexPath) {
+
+		self.indexPath = indexPath
+		playItemAt(indexPath, fromItems: queue)
+	}
+
+	public func playItem(_ item: AVPlayerItem) {
 
 		DispatchQueue.main.async {
 
