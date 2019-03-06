@@ -403,7 +403,7 @@ open class InStatPlayerView: UIView {
 			} else if section == zero && item == zero {
 				indexPath = IndexPath(item: zero, section: zero)
 			} else if section == zero && item != zero {
-				indexPath = IndexPath(item: item - step, section: stepBack)
+				indexPath = IndexPath(item: item - step, section: section)
 			} else if section != zero && queue[section].count == step {
 				indexPath = IndexPath(item: queue[stepBack].count - step, section: stepBack)
 			} else if item == zero && queue[section].count != step {

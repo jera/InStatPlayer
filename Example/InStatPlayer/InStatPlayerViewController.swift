@@ -45,7 +45,7 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 		let item3 = AVPlayerItem(url: url)
 
 		
-		let queue = [[item0],[item1,item2],[item3]]
+		let queue = [[item0, item1,item2]]
 
 		let control = CustomInStatControlView(customIndicatorView: indicatorView)
 		player = InStatPlayerView(queue, customControlView: control)
