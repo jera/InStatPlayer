@@ -337,8 +337,8 @@ open class InStatControlView: UIView {
 		addSubview(indicatorView)
 		indicatorView.widthAnchor.constraint(equalToConstant: 50).isActive = true
 		indicatorView.heightAnchor.constraint(equalToConstant: 50).isActive = true
-		indicatorView.centerXAnchor.constraint(equalTo: progressView.centerXAnchor).isActive = true
-		indicatorView.centerYAnchor.constraint(equalTo: progressView.centerYAnchor).isActive = true
+		indicatorView.centerXAnchor.constraint(equalTo: centerXAnchor).isActive = true
+		indicatorView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
 	}
 
 	// MARK: - Helpers

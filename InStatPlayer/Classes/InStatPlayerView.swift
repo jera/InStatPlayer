@@ -43,7 +43,9 @@ open class InStatPlayerView: UIView {
 
 	open override func awakeFromNib() {
 		super.awakeFromNib()
+		
 		setupControls()
+		setupPlayer()
 	}
 
 	public override init(frame: CGRect) {
