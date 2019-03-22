@@ -20,10 +20,36 @@ it, simply add the following line to your Podfile:
 pod 'InStatPlayer'
 ```
 
-## Author
+# Author
 
-tularovbeslan@gmail.com, tularovbeslan@gmail.com
+Beslan Tularov | <a href="url"><img src="https://user-images.githubusercontent.com/4906243/54856729-037dcb00-4d0d-11e9-9d6f-8a5b8e316ff8.png" height="15"> </a> [@JiromTomson](https://twitter.com/JiromTomson)
+
+[<img src="https://user-images.githubusercontent.com/4906243/54857819-5efe8780-4d12-11e9-8100-bce42594f8a3.png" height="32" width="121">](https://github.com/tularovbeslan)
+
+[<img src="https://user-images.githubusercontent.com/4906243/54857820-5efe8780-4d12-11e9-8a91-4a8e85b89130.png" height="32" width="121">](https://twitter.com/JiromTomson)
 
 ## License
 
-InStatPlayer is available under the MIT license. See the LICENSE file for more info.
+```
+MIT License
+
+Copyright (c) 2018 Beslan Tularov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
