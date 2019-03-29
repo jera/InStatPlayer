@@ -43,7 +43,8 @@ open class InStatPlayerView: UIView {
 
 	open override func awakeFromNib() {
 		super.awakeFromNib()
-		
+
+		prepareToInit()
 		setupControls()
 		setupPlayer()
 	}
@@ -56,6 +57,7 @@ open class InStatPlayerView: UIView {
 	public convenience init(_ queue: [[AVPlayerItem]], customControlView: InStatControlView?) {
 		self.init()
 
+		prepareToInit()
 		self.customControlView = customControlView
 		self.queue = queue
 		setupControls()
@@ -65,6 +67,7 @@ open class InStatPlayerView: UIView {
 	public convenience init(_ queue: [[AVPlayerItem]]) {
 		self.init()
 
+		prepareToInit()
 		self.queue = queue
 		setupControls()
 		setupPlayer()
@@ -73,6 +76,7 @@ open class InStatPlayerView: UIView {
 	public convenience init(_ playerItem: AVPlayerItem) {
 		self.init()
 
+		prepareToInit()
 		self.playerItem = playerItem
 		setupControls()
 		setupPlayer()
@@ -85,6 +89,7 @@ open class InStatPlayerView: UIView {
 	public init(customControlView: InStatControlView?) {
 		super.init(frame:CGRect.zero)
 
+		prepareToInit()
 		self.customControlView = customControlView
 		setupControls()
 		setupPlayer()
@@ -92,6 +97,14 @@ open class InStatPlayerView: UIView {
 
 	deinit {
 		prepareToDeinit()
+	}
+
+	func prepareToInit() {
+
+		player = AVPlayer()
+		playerLayer?.removeFromSuperlayer()
+		playerLayer = AVPlayerLayer(player: player)
+		playerLayer?.videoGravity = videoGravity
 	}
 
 	open func prepareToDeinit() {
@@ -130,7 +143,7 @@ open class InStatPlayerView: UIView {
 		case .fourToTHREE:
 
 			self.playerLayer?.videoGravity = AVLayerVideoGravity.resize
-			let width = self.bounds.height * 4 / 3
+			let width = self.bounds.height * 3 / 4
 			self.playerLayer?.frame = CGRect(x: (self.bounds.width - width ) / 2, y: 0, width: width, height: self.bounds.height)
 		}
 	}
@@ -171,10 +184,7 @@ open class InStatPlayerView: UIView {
 			item = queue[indexPath.section][indexPath.row]
 		}
 
-		player = AVPlayer(playerItem: item)
-		playerLayer?.removeFromSuperlayer()
-		playerLayer = AVPlayerLayer(player: player)
-		playerLayer?.videoGravity = videoGravity
+		player?.replaceCurrentItem(with: item)
 		layer.insertSublayer(playerLayer!, at: 0)
 		setNeedsLayout()
 		layoutIfNeeded()
@@ -231,7 +241,7 @@ open class InStatPlayerView: UIView {
 								  item: item,
 								  at: indexPath)
 				controlView.stateChange(.error)
-			}  else if item.status == .unknown {
+			} else if item.status == .unknown {
 
 				delegate?.player?(self,
 								  bufferingUnknown: item,
@@ -428,7 +438,7 @@ open class InStatPlayerView: UIView {
 		setupTimer()
 		if self.player?.currentItem?.status == AVPlayerItem.Status.readyToPlay {
 			let draggedTime = CMTimeMake(value: Int64(secounds), timescale: 1)
-			self.player!.seek(to: draggedTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero, completionHandler: { (finished) in
+			self.player!.seek(to: draggedTime, toleranceBefore: CMTime.zero, toleranceAfter: CMTime.zero, completionHandler: { (_) in
 			})
 		} else {
 			self.shouldSeekTo = secounds

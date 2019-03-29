@@ -1,10 +1,9 @@
-
 import UIKit
 import Lottie
 
 class InStatIndicatorView: UIView {
     let animationView = LOTAnimationView(name: "InStatIndicator")
-    
+
     override func awakeFromNib() {
 		super.awakeFromNib()
 		setupIndicator()
@@ -14,7 +13,7 @@ class InStatIndicatorView: UIView {
 		super.init(frame: frame)
 		setupIndicator()
 	}
-	
+
 	required init?(coder aDecoder: NSCoder) {
 		super.init(coder: aDecoder)
 	}

@@ -16,9 +16,8 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 	@IBOutlet weak var segmentedControl: UISegmentedControl!
 	open var indicatorView = InStatIndicatorView()
 
-
 	var isStatusBarHidden: Bool = false {
-		didSet{
+		didSet {
 			UIView.animate(withDuration: 0.5) { () -> Void in
 				self.setNeedsStatusBarAppearanceUpdate()
 			}
@@ -38,17 +37,16 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 
 	func setupPlayer() {
 
-		let url = URL(string: "https://sample-videos.com/video123/mp4/240/big_buck_bunny_240p_10mb.mp4")!
+		let url = URL(string: "rtsp://184.72.239.149/vod/mp4")!
 		let item0 = AVPlayerItem(url: url)
 		let item1 = AVPlayerItem(url: url)
 		let item2 = AVPlayerItem(url: url)
 		let item3 = AVPlayerItem(url: url)
 
-		
-		let queue = [[item0, item1,item2]]
-
-		let control = CustomInStatControlView(customIndicatorView: indicatorView)
-		player = InStatPlayerView(queue, customControlView: control)
+//		let queue = [[item0, item1,item2]]
+//
+//		let control = CustomInStatControlView(customIndicatorView: indicatorView)
+		player = InStatPlayerView(item0)
 		player.translatesAutoresizingMaskIntoConstraints = false
 		player.delegate = self
 		view.addSubview(player)
@@ -97,12 +95,11 @@ class InStatPlayerViewController: UIViewController, InStatPlayerDelegate {
 		}
 	}
 
-	override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation{
+	override var preferredStatusBarUpdateAnimation: UIStatusBarAnimation {
 		return .slide
 	}
 
-	override var prefersStatusBarHidden: Bool{
+	override var prefersStatusBarHidden: Bool {
 		return isStatusBarHidden
 	}
 }
-

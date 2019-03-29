@@ -19,7 +19,6 @@ public enum InStatPlayerState {
 	case ended
 }
 
-
 @objc public protocol InStatControlViewDelegate: class {
 
 	func controlView(controlView: InStatControlView, slider: UISlider, onSliderEvent event: UIControl.Event)
@@ -114,7 +113,7 @@ open class InStatControlView: UIView {
 
 		let button = UIButton(type: .custom)
 		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(imageResourcePath("fullscreen"),    for: .normal)
+		button.setImage(imageResourcePath("fullscreen"), for: .normal)
 		button.setImage(imageResourcePath("portialscreen"), for: .selected)
 		button.addTarget(self,
 						 action: #selector(fullScreenDidPress),
@@ -189,7 +188,7 @@ open class InStatControlView: UIView {
 						 for: UIControl.Event.valueChanged)
 		slider.addTarget(self,
 						 action: #selector(sliderTouchEnded(_:)),
-						 for: [UIControl.Event.touchUpInside,UIControl.Event.touchCancel,
+						 for: [UIControl.Event.touchUpInside, UIControl.Event.touchCancel,
 							   UIControl.Event.touchUpOutside])
 		return slider
 	}()
@@ -214,7 +213,6 @@ open class InStatControlView: UIView {
 	open var isMaskShowing = true
 	open var tapGesture: UITapGestureRecognizer!
 
-
 	fileprivate var isFullScreen: Bool {
 		get {
 			return UIApplication.shared.statusBarOrientation.isLandscape
@@ -231,7 +229,7 @@ open class InStatControlView: UIView {
 	}
 
 	public init(customIndicatorView: UIView?) {
-		super.init(frame:CGRect.zero)
+		super.init(frame: CGRect.zero)
 
 		self.customIndicatorView = customIndicatorView
 		setupUIComponents()
@@ -446,14 +444,14 @@ open class InStatControlView: UIView {
 
 	@objc open func menuDidPress() { print("menuDidPress") }
 
-	@objc func sliderTouchBegan(_ sender: UISlider)  {
+	@objc func sliderTouchBegan(_ sender: UISlider) {
 
 		delegate?.controlView(controlView: self,
 							  slider: sender,
 							  onSliderEvent: .touchDown)
 	}
 
-	@objc func sliderValueChanged(_ sender: UISlider)  {
+	@objc func sliderValueChanged(_ sender: UISlider) {
 
 		cancelAutoFadeControlView()
 		let currentTime = Double(sender.value) * totalDuration
@@ -464,7 +462,7 @@ open class InStatControlView: UIView {
 		isScrubbing = true
 	}
 
-	@objc func sliderTouchEnded(_ sender: UISlider)  {
+	@objc func sliderTouchEnded(_ sender: UISlider) {
 
 		autoFadeControlView()
 		delegate?.controlView(controlView: self, slider: sender, onSliderEvent: .touchUpInside)
