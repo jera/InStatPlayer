@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'InStatPlayer'
-  s.version          = '1.1.3'
+  s.version          = '1.1.4'
   s.summary          = 'InStatPlayer - media player'
 
   # This description is used to generate tags and improve search results.
