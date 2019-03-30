@@ -1,7 +1,9 @@
 # InStatPlayer
 
-[![CI Status](https://img.shields.io/travis/tularovbeslan@gmail.com/InStatPlayer.svg?style=flat)](https://travis-ci.org/tularovbeslan@gmail.com/InStatPlayer)
+[![CI Status](https://travis-ci.org/tularovbeslan/InStatPlayer.svg?branch=master)](https://travis-ci.org/tularovbeslan@gmail.com/InStatPlayer)
 [![Version](https://img.shields.io/cocoapods/v/InStatPlayer.svg?style=flat)](https://cocoapods.org/pods/InStatPlayer)
+![iOS 10.0+](https://img.shields.io/badge/iOS-10.0%2B-red.svg)
+![Swift 5](https://img.shields.io/badge/Swift-5-orange.svg)
 [![License](https://img.shields.io/cocoapods/l/InStatPlayer.svg?style=flat)](https://cocoapods.org/pods/InStatPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/InStatPlayer.svg?style=flat)](https://cocoapods.org/pods/InStatPlayer)
 
