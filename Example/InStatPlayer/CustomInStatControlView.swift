@@ -32,6 +32,7 @@ class CustomInStatControlView: InStatControlView {
 
 		fullscreenButton.removeFromSuperview()
 		airplayButton.removeFromSuperview()
+		videoGravityButton.removeFromSuperview()
 
 		let bottomView = UIView()
 		bottomView.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +67,10 @@ class CustomInStatControlView: InStatControlView {
 		bottomView.addSubview(fullscreenButton)
 		fullscreenButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -15).isActive = true
 		fullscreenButton.rightAnchor.constraint(equalTo: bottomView.rightAnchor, constant: -25).isActive = true
+
+		bottomView.addSubview(videoGravityButton)
+		videoGravityButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -15).isActive = true
+		videoGravityButton.rightAnchor.constraint(equalTo: fullscreenButton.rightAnchor, constant: -25).isActive = true
 
 		bottomView.addSubview(airplayButton)
 		airplayButton.bottomAnchor.constraint(equalTo: bottomView.bottomAnchor, constant: -15).isActive = true

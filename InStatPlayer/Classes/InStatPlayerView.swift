@@ -52,6 +52,9 @@ open class InStatPlayerView: UIView {
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
 
+		prepareToInit()
+		setupControls()
+		setupPlayer()
 	}
 
 	public convenience init(_ queue: [[AVPlayerItem]], customControlView: InStatControlView?) {
@@ -105,6 +108,9 @@ open class InStatPlayerView: UIView {
 		playerLayer?.removeFromSuperlayer()
 		playerLayer = AVPlayerLayer(player: player)
 		playerLayer?.videoGravity = videoGravity
+		layer.insertSublayer(playerLayer!, at: 0)
+		setNeedsLayout()
+		layoutIfNeeded()
 	}
 
 	open func prepareToDeinit() {
@@ -185,9 +191,6 @@ open class InStatPlayerView: UIView {
 		}
 
 		player?.replaceCurrentItem(with: item)
-		layer.insertSublayer(playerLayer!, at: 0)
-		setNeedsLayout()
-		layoutIfNeeded()
 		delegate?.player?(self, ready: item, at: indexPath)
 		play()
 	}
@@ -315,8 +318,11 @@ open class InStatPlayerView: UIView {
 
 	fileprivate func fullScreenButton(isSelected: Bool) {
 
-		isFullScreen = isSelected
-		controlView.fullscreenButton.isSelected = isSelected
+		if controlView != nil {
+
+			isFullScreen = isSelected
+			controlView.fullscreenButton.isSelected = isSelected
+		}
 	}
 
 	// MARK: - Control actions

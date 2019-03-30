@@ -122,6 +122,19 @@ open class InStatControlView: UIView {
 		return button
 	}()
 
+	open var videoGravityButton: UIButton = {
+
+		let button = UIButton(type: .custom)
+		button.translatesAutoresizingMaskIntoConstraints = false
+		button.setImage(imageResourcePath("videogravityFill"), for: .normal)
+		button.setImage(imageResourcePath("videogravity"), for: .selected)
+		button.addTarget(self,
+						 action: #selector(videoGravityButtonDidPress),
+						 for: .touchUpInside)
+		button.tintColor = .white
+		return button
+	}()
+
 	open var titleLabel: UILabel = {
 
 		let label = UILabel()
@@ -297,6 +310,12 @@ open class InStatControlView: UIView {
 		airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
 		airplayButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
 		airplayButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
+
+		mainMaskView.addSubview(videoGravityButton)
+		videoGravityButton.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 25).isActive = true
+		videoGravityButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
+		videoGravityButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
+		videoGravityButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
 	}
 
 	func fullscreenControlConstraints() {
@@ -423,6 +442,13 @@ open class InStatControlView: UIView {
 
 		guard let player = playerView else { return }
 		player.delegate?.playerDidFullscreen?(player)
+	}
+
+	@objc open func videoGravityButtonDidPress() {
+
+		guard let player = playerView else { return }
+		player.videoGravity = videoGravityButton.isSelected ? .resizeAspect : .resizeAspectFill
+		videoGravityButton.isSelected = !videoGravityButton.isSelected
 	}
 
 	@objc open func airplayDidPress(_ button: UIButton) {
