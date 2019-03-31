@@ -17,9 +17,20 @@
 		57F489B1225107F700F6A240 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */; };
 		57F489B32251080700F6A240 /* PlayerTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */; };
 		57F489B52251537800F6A240 /* CustomInStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B42251537800F6A240 /* CustomInStatViewController.swift */; };
+		57F489CF225172AF00F6A240 /* InStatPlayer_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489CE225172AF00F6A240 /* InStatPlayer_Tests.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9B71283CD743323905ADDAED /* Pods_InStatPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A48ED54392E423BE25FA014 /* Pods_InStatPlayer_Example.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		57F489D1225172AF00F6A240 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
+			remoteInfo = InStatPlayer_Example;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2E61B7AE7FC529A95D532D29 /* Pods-InStatPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InStatPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-InStatPlayer_Example/Pods-InStatPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -35,6 +46,9 @@
 		57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewHeader.swift; sourceTree = "<group>"; };
 		57F489B42251537800F6A240 /* CustomInStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInStatViewController.swift; sourceTree = "<group>"; };
+		57F489CC225172AF00F6A240 /* InStatPlayer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InStatPlayer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		57F489CE225172AF00F6A240 /* InStatPlayer_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStatPlayer_Tests.swift; sourceTree = "<group>"; };
+		57F489D0225172AF00F6A240 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InStatPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6358C82353F0F8A0A22933D7 /* InStatPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InStatPlayer.podspec; path = ../InStatPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -47,6 +61,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		57F489C9225172AF00F6A240 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCD1AFB9204008FA782 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -113,11 +134,21 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		57F489CD225172AF00F6A240 /* InStatPlayer_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				57F489CE225172AF00F6A240 /* InStatPlayer_Tests.swift */,
+				57F489D0225172AF00F6A240 /* Info.plist */,
+			);
+			path = InStatPlayer_Tests;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for InStatPlayer */,
+				57F489CD225172AF00F6A240 /* InStatPlayer_Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				FB906170DBB1E7E2955C303D /* Pods */,
 				CA6B793F92AA24486433443B /* Frameworks */,
@@ -128,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */,
+				57F489CC225172AF00F6A240 /* InStatPlayer_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +218,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		57F489CB225172AF00F6A240 /* InStatPlayer_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 57F489D3225172AF00F6A240 /* Build configuration list for PBXNativeTarget "InStatPlayer_Tests" */;
+			buildPhases = (
+				57F489C8225172AF00F6A240 /* Sources */,
+				57F489C9225172AF00F6A240 /* Frameworks */,
+				57F489CA225172AF00F6A240 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				57F489D2225172AF00F6A240 /* PBXTargetDependency */,
+			);
+			name = InStatPlayer_Tests;
+			productName = InStatPlayer_Tests;
+			productReference = 57F489CC225172AF00F6A240 /* InStatPlayer_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		607FACCF1AFB9204008FA782 /* InStatPlayer_Example */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 607FACEF1AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InStatPlayer_Example" */;
@@ -211,10 +261,16 @@
 		607FACC81AFB9204008FA782 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0830;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = CocoaPods;
 				TargetAttributes = {
+					57F489CB225172AF00F6A240 = {
+						CreatedOnToolsVersion = 10.2;
+						DevelopmentTeam = MTVD7A69KL;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 607FACCF1AFB9204008FA782;
+					};
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = MTVD7A69KL;
@@ -236,11 +292,19 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* InStatPlayer_Example */,
+				57F489CB225172AF00F6A240 /* InStatPlayer_Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		57F489CA225172AF00F6A240 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCE1AFB9204008FA782 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -304,6 +368,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		57F489C8225172AF00F6A240 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				57F489CF225172AF00F6A240 /* InStatPlayer_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		607FACCC1AFB9204008FA782 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -319,6 +391,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		57F489D2225172AF00F6A240 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 607FACCF1AFB9204008FA782 /* InStatPlayer_Example */;
+			targetProxy = 57F489D1225172AF00F6A240 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		57F489AA2250F5B600F6A240 /* Main.storyboard */ = {
@@ -340,6 +420,61 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		57F489D4225172AF00F6A240 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = MTVD7A69KL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = InStatPlayer_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "BTR.InStatPlayer-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InStatPlayer_Example.app/InStatPlayer_Example";
+			};
+			name = Debug;
+		};
+		57F489D5225172AF00F6A240 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = MTVD7A69KL;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = InStatPlayer_Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "BTR.InStatPlayer-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InStatPlayer_Example.app/InStatPlayer_Example";
+			};
+			name = Release;
+		};
 		607FACED1AFB9204008FA782 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -481,6 +616,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		57F489D3225172AF00F6A240 /* Build configuration list for PBXNativeTarget "InStatPlayer_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				57F489D4225172AF00F6A240 /* Debug */,
+				57F489D5225172AF00F6A240 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		607FACCB1AFB9204008FA782 /* Build configuration list for PBXProject "InStatPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
