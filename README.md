@@ -88,7 +88,7 @@ You should conforms to protocol InStatPlayerDelegate to get more information fro
 ```
 ## Customization
 
-Using the customizeControlView() method from InStatControlView you can customize the controls according to your desire
+Using the customizeControlView() method from InStatControlView you can customize the controls according to your desire.
 The project example provides an example of how this can be achieved.
 
 ## Installation
