@@ -17,7 +17,7 @@ open class InStatPlayerView: UIView {
 	fileprivate var timer: Timer?
 	fileprivate var indexPath: IndexPath = IndexPath(row: 0, section: 0)
 	fileprivate var controlView: InStatControlView!
-	fileprivate var customControlView: InStatControlView?
+	open var customControlView: InStatControlView?
 	fileprivate var playerLayer: AVPlayerLayer?
 	public var player: AVPlayer?
 	public var autoPlay: Bool = true

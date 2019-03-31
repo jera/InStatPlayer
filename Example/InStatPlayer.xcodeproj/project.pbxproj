@@ -7,43 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		570EAA02222337A300D14929 /* InStatIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 570EAA01222337A300D14929 /* InStatIndicator.json */; };
-		570EAA042223382600D14929 /* InStatIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 570EAA032223382600D14929 /* InStatIndicatorView.swift */; };
-		577D60AB221C7D3E00ED9642 /* CustomInStatControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */; };
-		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
-		607FACD81AFB9204008FA782 /* InStatPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* InStatPlayerViewController.swift */; };
-		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
-		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
+		57F4899D2250F50F00F6A240 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 57F4899C2250F50F00F6A240 /* Images.xcassets */; };
+		57F489A12250F52100F6A240 /* CustomInStatControlView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4899E2250F52100F6A240 /* CustomInStatControlView.swift */; };
+		57F489A22250F52100F6A240 /* InStatPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F4899F2250F52100F6A240 /* InStatPlayerViewController.swift */; };
+		57F489A32250F52100F6A240 /* InStatIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489A02250F52100F6A240 /* InStatIndicatorView.swift */; };
+		57F489A52250F52900F6A240 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489A42250F52900F6A240 /* AppDelegate.swift */; };
+		57F489A92250F59400F6A240 /* InStatIndicator.json in Resources */ = {isa = PBXBuildFile; fileRef = 57F489A82250F59400F6A240 /* InStatIndicator.json */; };
+		57F489AC2250F5B600F6A240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F489AA2250F5B600F6A240 /* Main.storyboard */; };
+		57F489B1225107F700F6A240 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */; };
+		57F489B32251080700F6A240 /* PlayerTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9B71283CD743323905ADDAED /* Pods_InStatPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A48ED54392E423BE25FA014 /* Pods_InStatPlayer_Example.framework */; };
-		E5A3A2687D485E9D1B90AC8B /* Pods_InStatPlayer_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E387A0F372799F6C38D6ED1 /* Pods_InStatPlayer_Tests.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		607FACE61AFB9204008FA782 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 607FACC81AFB9204008FA782 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 607FACCF1AFB9204008FA782;
-			remoteInfo = InStatPlayer;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		2E61B7AE7FC529A95D532D29 /* Pods-InStatPlayer_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InStatPlayer_Example.release.xcconfig"; path = "Target Support Files/Pods-InStatPlayer_Example/Pods-InStatPlayer_Example.release.xcconfig"; sourceTree = "<group>"; };
 		56BBD9B80B0250C109D44F7E /* Pods-InStatPlayer_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InStatPlayer_Tests.debug.xcconfig"; path = "Target Support Files/Pods-InStatPlayer_Tests/Pods-InStatPlayer_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		570EAA01222337A300D14929 /* InStatIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InStatIndicator.json; sourceTree = "<group>"; };
-		570EAA032223382600D14929 /* InStatIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InStatIndicatorView.swift; sourceTree = "<group>"; };
-		577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInStatControlView.swift; sourceTree = "<group>"; };
+		57F4899C2250F50F00F6A240 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		57F4899E2250F52100F6A240 /* CustomInStatControlView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomInStatControlView.swift; sourceTree = "<group>"; };
+		57F4899F2250F52100F6A240 /* InStatPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InStatPlayerViewController.swift; sourceTree = "<group>"; };
+		57F489A02250F52100F6A240 /* InStatIndicatorView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InStatIndicatorView.swift; sourceTree = "<group>"; };
+		57F489A42250F52900F6A240 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		57F489A62250F53100F6A240 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		57F489A82250F59400F6A240 /* InStatIndicator.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = InStatIndicator.json; sourceTree = "<group>"; };
+		57F489AB2250F5B600F6A240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "InStatPlayer/Supporting Files/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
+		57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
+		57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewHeader.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InStatPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		607FACD71AFB9204008FA782 /* InStatPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InStatPlayerViewController.swift; sourceTree = "<group>"; };
-		607FACDA1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		607FACDC1AFB9204008FA782 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		607FACE51AFB9204008FA782 /* InStatPlayer_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InStatPlayer_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6358C82353F0F8A0A22933D7 /* InStatPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InStatPlayer.podspec; path = ../InStatPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		6A48ED54392E423BE25FA014 /* Pods_InStatPlayer_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InStatPlayer_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E387A0F372799F6C38D6ED1 /* Pods_InStatPlayer_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InStatPlayer_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,23 +53,68 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		607FACE21AFB9204008FA782 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E5A3A2687D485E9D1B90AC8B /* Pods_InStatPlayer_Tests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		57F4898F2250F24800F6A240 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				57F489A82250F59400F6A240 /* InStatIndicator.json */,
+				57F4899C2250F50F00F6A240 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		57F489962250F42200F6A240 /* ApplicationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				57F489A42250F52900F6A240 /* AppDelegate.swift */,
+			);
+			path = ApplicationLayer;
+			sourceTree = "<group>";
+		};
+		57F489982250F43500F6A240 /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				57F489AF225107CA00F6A240 /* View */,
+				57F489AE2250FC6F00F6A240 /* Controller */,
+				57F489AD2250FC4400F6A240 /* Storyboard */,
+			);
+			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		57F489AD2250FC4400F6A240 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				57F489AA2250F5B600F6A240 /* Main.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		57F489AE2250FC6F00F6A240 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				57F4899F2250F52100F6A240 /* InStatPlayerViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		57F489AF225107CA00F6A240 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				57F489A02250F52100F6A240 /* InStatIndicatorView.swift */,
+				57F4899E2250F52100F6A240 /* CustomInStatControlView.swift */,
+				57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */,
+				57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for InStatPlayer */,
-				607FACE81AFB9204008FA782 /* Tests */,
 				607FACD11AFB9204008FA782 /* Products */,
 				FB906170DBB1E7E2955C303D /* Pods */,
 				CA6B793F92AA24486433443B /* Frameworks */,
@@ -89,7 +125,6 @@
 			isa = PBXGroup;
 			children = (
 				607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */,
-				607FACE51AFB9204008FA782 /* InStatPlayer_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -97,14 +132,9 @@
 		607FACD21AFB9204008FA782 /* Example for InStatPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				570EAA032223382600D14929 /* InStatIndicatorView.swift */,
-				570EAA01222337A300D14929 /* InStatIndicator.json */,
-				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				607FACD71AFB9204008FA782 /* InStatPlayerViewController.swift */,
-				577D60AA221C7D3E00ED9642 /* CustomInStatControlView.swift */,
-				607FACD91AFB9204008FA782 /* Main.storyboard */,
-				607FACDC1AFB9204008FA782 /* Images.xcassets */,
-				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
+				57F489962250F42200F6A240 /* ApplicationLayer */,
+				57F489982250F43500F6A240 /* PresentationLayer */,
+				57F4898F2250F24800F6A240 /* Resources */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
 			);
 			name = "Example for InStatPlayer";
@@ -114,25 +144,10 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD41AFB9204008FA782 /* Info.plist */,
+				57F489A62250F53100F6A240 /* Info.plist */,
+				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		607FACE81AFB9204008FA782 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-				607FACE91AFB9204008FA782 /* Supporting Files */,
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
-		607FACE91AFB9204008FA782 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				607FACEA1AFB9204008FA782 /* Info.plist */,
-			);
-			name = "Supporting Files";
+			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		607FACF51AFB993E008FA782 /* Podspec Metadata */ = {
@@ -187,25 +202,6 @@
 			productReference = 607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */;
 			productType = "com.apple.product-type.application";
 		};
-		607FACE41AFB9204008FA782 /* InStatPlayer_Tests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InStatPlayer_Tests" */;
-			buildPhases = (
-				E3F53FE86DFF3B8F8E50E798 /* [CP] Check Pods Manifest.lock */,
-				607FACE11AFB9204008FA782 /* Sources */,
-				607FACE21AFB9204008FA782 /* Frameworks */,
-				607FACE31AFB9204008FA782 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				607FACE71AFB9204008FA782 /* PBXTargetDependency */,
-			);
-			name = InStatPlayer_Tests;
-			productName = Tests;
-			productReference = 607FACE51AFB9204008FA782 /* InStatPlayer_Tests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -220,12 +216,6 @@
 						CreatedOnToolsVersion = 6.3.1;
 						DevelopmentTeam = MTVD7A69KL;
 						LastSwiftMigration = 1020;
-					};
-					607FACE41AFB9204008FA782 = {
-						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = MTVD7A69KL;
-						LastSwiftMigration = 1010;
-						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
 				};
 			};
@@ -243,7 +233,6 @@
 			projectRoot = "";
 			targets = (
 				607FACCF1AFB9204008FA782 /* InStatPlayer_Example */,
-				607FACE41AFB9204008FA782 /* InStatPlayer_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -253,17 +242,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				570EAA02222337A300D14929 /* InStatIndicator.json in Resources */,
-				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				57F489A92250F59400F6A240 /* InStatIndicator.json in Resources */,
+				57F4899D2250F50F00F6A240 /* Images.xcassets in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
-				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		607FACE31AFB9204008FA782 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				57F489AC2250F5B600F6A240 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,28 +298,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E3F53FE86DFF3B8F8E50E798 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InStatPlayer_Tests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -345,35 +305,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				607FACD81AFB9204008FA782 /* InStatPlayerViewController.swift in Sources */,
-				577D60AB221C7D3E00ED9642 /* CustomInStatControlView.swift in Sources */,
-				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				570EAA042223382600D14929 /* InStatIndicatorView.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		607FACE11AFB9204008FA782 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				57F489A52250F52900F6A240 /* AppDelegate.swift in Sources */,
+				57F489A22250F52100F6A240 /* InStatPlayerViewController.swift in Sources */,
+				57F489B1225107F700F6A240 /* PlayerTableViewCell.swift in Sources */,
+				57F489B32251080700F6A240 /* PlayerTableViewHeader.swift in Sources */,
+				57F489A32250F52100F6A240 /* InStatIndicatorView.swift in Sources */,
+				57F489A12250F52100F6A240 /* CustomInStatControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXTargetDependency section */
-		607FACE71AFB9204008FA782 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 607FACCF1AFB9204008FA782 /* InStatPlayer_Example */;
-			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin PBXVariantGroup section */
-		607FACD91AFB9204008FA782 /* Main.storyboard */ = {
+		57F489AA2250F5B600F6A240 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				607FACDA1AFB9204008FA782 /* Base */,
+				57F489AB2250F5B600F6A240 /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -499,12 +446,14 @@
 			baseConfigurationReference = CB90EC3F6BC180F6A9E77F36 /* Pods-InStatPlayer_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MTVD7A69KL;
-				INFOPLIST_FILE = InStatPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InStatPlayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -514,53 +463,14 @@
 			baseConfigurationReference = 2E61B7AE7FC529A95D532D29 /* Pods-InStatPlayer_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = MTVD7A69KL;
-				INFOPLIST_FILE = InStatPlayer/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/InStatPlayer/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-			};
-			name = Release;
-		};
-		607FACF31AFB9204008FA782 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 56BBD9B80B0250C109D44F7E /* Pods-InStatPlayer_Tests.debug.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = MTVD7A69KL;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InStatPlayer_Example.app/InStatPlayer_Example";
-			};
-			name = Debug;
-		};
-		607FACF41AFB9204008FA782 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8EA9C8AE3C64C4D5EFE505AF /* Pods-InStatPlayer_Tests.release.xcconfig */;
-			buildSettings = {
-				DEVELOPMENT_TEAM = MTVD7A69KL;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InStatPlayer_Example.app/InStatPlayer_Example";
 			};
 			name = Release;
 		};
@@ -581,15 +491,6 @@
 			buildConfigurations = (
 				607FACF01AFB9204008FA782 /* Debug */,
 				607FACF11AFB9204008FA782 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		607FACF21AFB9204008FA782 /* Build configuration list for PBXNativeTarget "InStatPlayer_Tests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				607FACF31AFB9204008FA782 /* Debug */,
-				607FACF41AFB9204008FA782 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
