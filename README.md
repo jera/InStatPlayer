@@ -11,11 +11,85 @@
 [![License](https://img.shields.io/cocoapods/l/InStatPlayer.svg?style=flat)](https://cocoapods.org/pods/InStatPlayer)
 [![Platform](https://img.shields.io/cocoapods/p/InStatPlayer.svg?style=flat)](https://cocoapods.org/pods/InStatPlayer)
 
-## Example
+## Use
 
+InStatPlayer is a flexible media player, the playback queue consists of an embedded array AVPlayerItem, which makes it easy to get IndexPath, it is very convenient to interact with UITableView.
+
+Open example project to see how easy it is to manipulate the UITableView.
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
-## Requirements
+## InStatPlayerDelegate
+
+You should conforms to protocol InStatPlayerDelegate to get more information from InStatPlayer
+```swift
+    @objc optional func player(_ player: InStatPlayerView,
+							          ready item: AVPlayerItem,
+							          at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        didPlay item: AVPlayerItem,
+							        at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+								      didPause item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							   	    didStop item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        didFail error: Error,
+								      item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func playerDidFullscreen(_ player: InStatPlayerView)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        didChangeTo time: Float64,
+								      for item: AVPlayerItem,
+								      at indexPath: IndexPath,
+								      total: Float64)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        willStartFromBeginning item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        didEnd item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        willLoop item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        bufferingUnknown item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        bufferingReady item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        bufferingDelayed item: AVPlayerItem,
+								      at indexPath: IndexPath)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        bufferingTimeDidChangeTo time: Float64,
+								      item: AVPlayerItem,
+								      at indexPath: IndexPath,
+								      total: Float64)
+
+	@objc optional func player(_ player: InStatPlayerView,
+							        seekTo time: Double,
+								      for item: AVPlayerItem,
+								      at indexPath: IndexPath)
+```
+## Customization
+
+Using the customizeControlView() method from InStatControlView you can customize the controls according to your desire
+The project example provides an example of how this can be achieved.
 
 ## Installation
 
@@ -23,7 +97,7 @@ InStatPlayer is available through [CocoaPods](https://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'InStatPlayer'
+   pod 'InStatPlayer'
 ```
 
 # Author
