@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
-//  InStatPlayer
+//  CustomInStatViewController.swift
+//  InStatPlayer_Example
 //
-//  Created by tularovbeslan@gmail.com on 02/19/2019.
-//  Copyright (c) 2019 tularovbeslan@gmail.com. All rights reserved.
+//  Created by workmachine on 31/03/2019.
+//  Copyright © 2019 CocoaPods. All rights reserved.
 //
 
 import UIKit
 import InStatPlayer
 import AVFoundation
 
-class InStatPlayerViewController: UIViewController {
-
+class CustomInStatViewController: UIViewController {
+	
 	@IBOutlet weak var playerView: InStatPlayerView!
 	@IBOutlet weak var tableView: UITableView!
 	@IBOutlet weak var playerViewHeightConstraint: NSLayoutConstraint!
@@ -31,7 +31,7 @@ class InStatPlayerViewController: UIViewController {
 	open override func viewDidLoad() {
 		super.viewDidLoad()
 
-		title = "Standard"
+		title = "Custom"
 		indicatorView.translatesAutoresizingMaskIntoConstraints = false
 		indicatorView.startAnimation()
 		setupTableView()
@@ -52,6 +52,9 @@ class InStatPlayerViewController: UIViewController {
 
 		playerView.delegate = self
 		playerView.queue = queue
+
+		let control = CustomInStatControlView(customIndicatorView: indicatorView)
+		playerView.customControlView = control
 	}
 
 	func setupTableView() {
@@ -98,26 +101,26 @@ class InStatPlayerViewController: UIViewController {
 
 	fileprivate func orientationLandscape() {
 
-		tabBarController?.tabBar.isHidden = true
 		isStatusBarHidden = true
 		navigationController?.setNavigationBarHidden(true, animated: true)
 		playerView.frame = UIScreen.main.bounds
 		playerViewHeightConstraint.constant = UIScreen.main.bounds.height
+		tabBarController?.tabBar.isHidden = true
 	}
 
 	fileprivate func orientationPortrait() {
 
-		tabBarController?.tabBar.isHidden = false
 		isStatusBarHidden = false
 		navigationController?.setNavigationBarHidden(false, animated: true)
 		playerView.frame = CGRect(x:0, y:0, width: UIScreen.main.bounds.width, height: videoPlayerHeight)
 		playerViewHeightConstraint.constant = videoPlayerHeight
+		tabBarController?.tabBar.isHidden = false
 	}
 }
 
 // MARK: - UITableViewDataSource
 
-extension InStatPlayerViewController: UITableViewDataSource {
+extension CustomInStatViewController: UITableViewDataSource {
 
 	func numberOfSections(in tableView: UITableView) -> Int {
 		return queue.count
@@ -136,7 +139,7 @@ extension InStatPlayerViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 
-extension InStatPlayerViewController: UITableViewDelegate {
+extension CustomInStatViewController: UITableViewDelegate {
 
 	public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
@@ -157,7 +160,7 @@ extension InStatPlayerViewController: UITableViewDelegate {
 
 // MARK: - InStatPlayerDelegate
 
-extension InStatPlayerViewController : InStatPlayerDelegate {
+extension CustomInStatViewController : InStatPlayerDelegate {
 
 	func player(_ player: InStatPlayerView, didPlay item: AVPlayerItem, at indexPath: IndexPath) {
 		tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)

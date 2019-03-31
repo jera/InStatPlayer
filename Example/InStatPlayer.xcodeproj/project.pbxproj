@@ -16,6 +16,7 @@
 		57F489AC2250F5B600F6A240 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57F489AA2250F5B600F6A240 /* Main.storyboard */; };
 		57F489B1225107F700F6A240 /* PlayerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */; };
 		57F489B32251080700F6A240 /* PlayerTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */; };
+		57F489B52251537800F6A240 /* CustomInStatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57F489B42251537800F6A240 /* CustomInStatViewController.swift */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		9B71283CD743323905ADDAED /* Pods_InStatPlayer_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A48ED54392E423BE25FA014 /* Pods_InStatPlayer_Example.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +34,7 @@
 		57F489AB2250F5B600F6A240 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = "InStatPlayer/Supporting Files/Base.lproj/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		57F489B0225107F700F6A240 /* PlayerTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewCell.swift; sourceTree = "<group>"; };
 		57F489B22251080700F6A240 /* PlayerTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerTableViewHeader.swift; sourceTree = "<group>"; };
+		57F489B42251537800F6A240 /* CustomInStatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomInStatViewController.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* InStatPlayer_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InStatPlayer_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACDF1AFB9204008FA782 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		6358C82353F0F8A0A22933D7 /* InStatPlayer.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = InStatPlayer.podspec; path = ../InStatPlayer.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -95,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				57F4899F2250F52100F6A240 /* InStatPlayerViewController.swift */,
+				57F489B42251537800F6A240 /* CustomInStatViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -310,6 +313,7 @@
 				57F489B1225107F700F6A240 /* PlayerTableViewCell.swift in Sources */,
 				57F489B32251080700F6A240 /* PlayerTableViewHeader.swift in Sources */,
 				57F489A32250F52100F6A240 /* InStatIndicatorView.swift in Sources */,
+				57F489B52251537800F6A240 /* CustomInStatViewController.swift in Sources */,
 				57F489A12250F52100F6A240 /* CustomInStatControlView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

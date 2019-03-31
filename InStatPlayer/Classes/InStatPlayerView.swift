@@ -17,7 +17,11 @@ open class InStatPlayerView: UIView {
 	fileprivate var timer: Timer?
 	fileprivate var indexPath: IndexPath = IndexPath(row: 0, section: 0)
 	fileprivate var controlView: InStatControlView!
-	open var customControlView: InStatControlView?
+	open var customControlView: InStatControlView? {
+		didSet {
+			setupControls()
+		}
+	}
 	fileprivate var playerLayer: AVPlayerLayer?
 	public var player: AVPlayer?
 	public var autoPlay: Bool = true
@@ -45,7 +49,6 @@ open class InStatPlayerView: UIView {
 		super.awakeFromNib()
 
 		prepareToInit()
-		setupControls()
 		setupPlayer()
 	}
 
@@ -53,7 +56,6 @@ open class InStatPlayerView: UIView {
 		super.init(frame: frame)
 
 		prepareToInit()
-		setupControls()
 		setupPlayer()
 	}
 
@@ -63,7 +65,6 @@ open class InStatPlayerView: UIView {
 		prepareToInit()
 		self.customControlView = customControlView
 		self.queue = queue
-		setupControls()
 		setupPlayer()
 	}
 
@@ -72,7 +73,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.queue = queue
-		setupControls()
 		setupPlayer()
 	}
 
@@ -81,7 +81,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.playerItem = playerItem
-		setupControls()
 		setupPlayer()
 	}
 
@@ -94,7 +93,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.customControlView = customControlView
-		setupControls()
 		setupPlayer()
 	}
 
@@ -159,8 +157,12 @@ open class InStatPlayerView: UIView {
 	fileprivate func setupControls() {
 
 		if let customView = customControlView {
+
+			controlView.removeFromSuperview()
 			controlView = customView
 		} else {
+
+			customControlView?.removeFromSuperview()
 			controlView = InStatControlView()
 		}
 
@@ -192,6 +194,8 @@ open class InStatPlayerView: UIView {
 
 		player?.replaceCurrentItem(with: item)
 		delegate?.player?(self, ready: item, at: indexPath)
+		setupControls()
+
 		play()
 	}
 
