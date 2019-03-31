@@ -1,5 +1,7 @@
 # InStatPlayer
 
+![Artboard](https://user-images.githubusercontent.com/4906243/55292006-28013380-53ee-11e9-857a-2e8f031eab7e.png)
+
 [![Twitter](https://img.shields.io/badge/twitter-@JiromTomson-blue.svg?style=flat
 )](https://twitter.com/JiromTomson)
 [![CI Status](https://travis-ci.org/tularovbeslan/InStatPlayer.svg?branch=master)](https://travis-ci.org/tularovbeslan@gmail.com/InStatPlayer)
