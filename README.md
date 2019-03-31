@@ -1,6 +1,6 @@
 # InStatPlayer
 
-![Isometric](https://user-images.githubusercontent.com/4906243/55292046-a1992180-53ee-11e9-943b-6ffb88c9a291.png)
+![Isometric](https://user-images.githubusercontent.com/4906243/55292060-cf7e6600-53ee-11e9-943c-7e68349fb8c7.png)
 
 [![Twitter](https://img.shields.io/badge/twitter-@JiromTomson-blue.svg?style=flat
 )](https://twitter.com/JiromTomson)
