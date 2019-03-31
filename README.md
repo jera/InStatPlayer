@@ -22,69 +22,69 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 
 You should conforms to protocol InStatPlayerDelegate to get more information from InStatPlayer
 ```swift
-    @objc optional func player(_ player: InStatPlayerView,
-							          ready item: AVPlayerItem,
-							          at indexPath: IndexPath)
+        @objc optional func player(_ player: InStatPlayerView,
+				     ready item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        didPlay item: AVPlayerItem,
-							        at indexPath: IndexPath)
+			             didPlay item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-								      didPause item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     didPause item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							   	    didStop item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     didStop item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        didFail error: Error,
-								      item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     didFail error: Error,
+				     item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func playerDidFullscreen(_ player: InStatPlayerView)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        didChangeTo time: Float64,
-								      for item: AVPlayerItem,
-								      at indexPath: IndexPath,
-								      total: Float64)
+				     didChangeTo time: Float64,
+				     for item: AVPlayerItem,
+				     at indexPath: IndexPath,
+				     total: Float64)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        willStartFromBeginning item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     willStartFromBeginning item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        didEnd item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     didEnd item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        willLoop item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     willLoop item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        bufferingUnknown item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     bufferingUnknown item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        bufferingReady item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     bufferingReady item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        bufferingDelayed item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     bufferingDelayed item: AVPlayerItem,
+				     at indexPath: IndexPath)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        bufferingTimeDidChangeTo time: Float64,
-								      item: AVPlayerItem,
-								      at indexPath: IndexPath,
-								      total: Float64)
+				     bufferingTimeDidChangeTo time: Float64,
+				     item: AVPlayerItem,
+				     at indexPath: IndexPath,
+				     total: Float64)
 
 	@objc optional func player(_ player: InStatPlayerView,
-							        seekTo time: Double,
-								      for item: AVPlayerItem,
-								      at indexPath: IndexPath)
+				     seekTo time: Double,
+				     for item: AVPlayerItem,
+				     at indexPath: IndexPath)
 ```
 ## Customization
 
