@@ -13,7 +13,7 @@
 
 ## Use
 
-InStatPlayer is a flexible media player, the playback queue consists of an embedded array AVPlayerItem, which makes it easy to get IndexPath, it is very convenient to interact with UITableView.
+InStatPlayer is a flexible media player, the playback queue consists of an nested array AVPlayerItem, which makes it easy to get IndexPath, it is very convenient to interact with UITableView.
 
 Open example project to see how easy it is to manipulate the UITableView.
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
