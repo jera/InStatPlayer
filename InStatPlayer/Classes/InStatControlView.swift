@@ -225,6 +225,13 @@ open class InStatControlView: UIView {
 	open var isFullscreen  = false
 	open var isMaskShowing = true
 	open var tapGesture: UITapGestureRecognizer!
+	open var isAutoFade: Bool = true {
+		didSet {
+			autoFadeControlView()
+		}
+	}
+	open var fadeTimeInterval: TimeInterval = 4
+	open var fadeDuration: TimeInterval = 0.3
 
 	fileprivate var isFullScreen: Bool {
 		get {
@@ -402,7 +409,7 @@ open class InStatControlView: UIView {
 	open func isShowControlView(_ isShow: Bool) {
 
 		self.isMaskShowing = isShow
-		UIView.animate(withDuration: 0.3, animations: {
+		UIView.animate(withDuration: fadeDuration, animations: {
 
 			self.mainMaskView.backgroundColor = UIColor(white: 0, alpha: isShow ? 0.5 : 0.0)
 			self.mainMaskView.alpha = isShow ? 1.0 : 0.0
@@ -413,13 +420,17 @@ open class InStatControlView: UIView {
 	open func autoFadeControlView() {
 
 		cancelAutoFadeControlView()
-		delayItem = DispatchWorkItem { [weak self] in
 
-			guard let `self` = self else { return }
-			self.isShowControlView(false)
+		if isAutoFade {
+
+			delayItem = DispatchWorkItem { [weak self] in
+
+				guard let `self` = self else { return }
+				self.isShowControlView(false)
+			}
+			DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + fadeTimeInterval,
+										  execute: delayItem!)
 		}
-		DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 5,
-									  execute: delayItem!)
 	}
 
 	open func cancelAutoFadeControlView() { delayItem?.cancel() }

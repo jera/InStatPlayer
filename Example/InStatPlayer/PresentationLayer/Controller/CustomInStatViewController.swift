@@ -54,6 +54,8 @@ class CustomInStatViewController: UIViewController {
 		playerView.queue = queue
 
 		let control = CustomInStatControlView(customIndicatorView: indicatorView)
+		control.isAutoFade = false
+		
 		playerView.customControlView = control
 	}
 

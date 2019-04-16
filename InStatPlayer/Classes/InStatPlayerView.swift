@@ -297,6 +297,8 @@ open class InStatPlayerView: UIView {
 						return
 					}
 				}
+			} else if player.error != nil {
+				controlView.stateChange(.playing)
 			}
 		}
 	}
