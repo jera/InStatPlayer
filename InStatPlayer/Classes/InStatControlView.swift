@@ -313,16 +313,16 @@ open class InStatControlView: UIView {
 		previousButton.heightAnchor.constraint(equalToConstant: 57).isActive = true
 
 		mainMaskView.addSubview(airplayButton)
-		airplayButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -25).isActive = true
+		airplayButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
 		airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
-		airplayButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
-		airplayButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
+		airplayButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
+		airplayButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
 
 		mainMaskView.addSubview(videoGravityButton)
-		videoGravityButton.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 25).isActive = true
+		videoGravityButton.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 15).isActive = true
 		videoGravityButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
-		videoGravityButton.widthAnchor.constraint(equalToConstant: 25).isActive = true
-		videoGravityButton.heightAnchor.constraint(equalToConstant: 18).isActive = true
+		videoGravityButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
+		videoGravityButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
 	}
 
 	func fullscreenControlConstraints() {
@@ -330,6 +330,8 @@ open class InStatControlView: UIView {
 		mainMaskView.addSubview(fullscreenButton)
 		fullscreenButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
 		fullscreenButton.bottomAnchor.constraint(equalTo: mainMaskView.bottomAnchor, constant: -15).isActive = true
+		fullscreenButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
+		fullscreenButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
 	}
 
 	func setupTimeLabelsConstraints() {
@@ -452,6 +454,8 @@ open class InStatControlView: UIView {
 	@objc open func fullScreenDidPress() {
 
 		guard let player = playerView else { return }
+		player.videoGravity = videoGravityButton.isSelected ? .resizeAspect : .resizeAspectFill
+		videoGravityButton.isSelected = !videoGravityButton.isSelected
 		player.delegate?.playerDidFullscreen?(player)
 	}
 
