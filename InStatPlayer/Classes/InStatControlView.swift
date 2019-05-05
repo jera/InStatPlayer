@@ -395,7 +395,16 @@ open class InStatControlView: UIView {
 
 		currentTimeLabel.text	= formatSecondsToString(currentTime)
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
-		progressSlider.value = Float(currentTime) / Float(totalTime)
+        let progress = Float(currentTime / totalTime)
+        
+        if isScrubbing == false {
+            // 0.25 - it is timer interval in InStatPlayerView
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: {
+                self.progressSlider.setValue(progress, animated: true)
+            }, completion: nil)
+        } else {
+            progressSlider.value = progress
+        }
 
 		if let player = playerView {
 

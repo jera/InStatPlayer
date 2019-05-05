@@ -202,7 +202,7 @@ open class InStatPlayerView: UIView {
 	func setupTimer() {
 
 		timer?.invalidate()
-		timer = Timer.scheduledTimer(timeInterval: 0.5,
+		timer = Timer.scheduledTimer(timeInterval: 0.25,
 									 target: self,
 									 selector: #selector(timerDidChange),
 									 userInfo: nil,
