@@ -216,10 +216,6 @@ open class InStatPlayerView: UIView {
 
 		guard let item = player?.currentItem else { return }
 
-		if item.isPlaybackLikelyToKeepUp {
-			controlView.stateChange(.bufferingForSomeTime)
-		}
-
 		if item.duration.timescale != 0 {
 
 			let currentTime = CMTimeGetSeconds(self.player!.currentTime())
