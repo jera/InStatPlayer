@@ -52,6 +52,8 @@ class InStatPlayerViewController: UIViewController {
 
 		playerView.delegate = self
 		playerView.queue = queue
+		playerView.realoadData()
+		playerView.play()
 	}
 
 	func setupTableView() {

@@ -17,23 +17,15 @@ open class InStatPlayerView: UIView {
 	fileprivate var timer: Timer?
 	fileprivate var indexPath: IndexPath = IndexPath(row: 0, section: 0)
 	fileprivate var controlView: InStatControlView!
-	open var customControlView: InStatControlView? {
-		didSet {
-			setupControls()
-		}
-	}
+	open var customControlView: InStatControlView?
 	fileprivate var playerLayer: AVPlayerLayer?
 	public var player: AVPlayer?
-	public var autoPlay: Bool = true
+
 	public var isPlayLoops: Bool = false
 	public var isFullScreen: Bool = false
-	public var queue: [[AVPlayerItem]] = [] {
-		didSet { setupPlayer() }
-	}
+	public var queue: [[AVPlayerItem]] = []
 
-	public var playerItem: AVPlayerItem! {
-		didSet { setupPlayer() }
-	}
+	public var playerItem: AVPlayerItem!
 
 	open var videoGravity = AVLayerVideoGravity.resizeAspect {
 		didSet { self.playerLayer?.videoGravity = videoGravity }
@@ -43,20 +35,22 @@ open class InStatPlayerView: UIView {
 		didSet { self.setNeedsLayout() }
 	}
 
+	open func realoadData() {
+		setupPlayer()
+	}
+
 	// MARK: - Life cycle
 
 	open override func awakeFromNib() {
 		super.awakeFromNib()
 
 		prepareToInit()
-		setupPlayer()
 	}
 
 	public override init(frame: CGRect) {
 		super.init(frame: frame)
 
 		prepareToInit()
-		setupPlayer()
 	}
 
 	public convenience init(_ queue: [[AVPlayerItem]], customControlView: InStatControlView?) {
@@ -65,7 +59,6 @@ open class InStatPlayerView: UIView {
 		prepareToInit()
 		self.customControlView = customControlView
 		self.queue = queue
-		setupPlayer()
 	}
 
 	public convenience init(_ queue: [[AVPlayerItem]]) {
@@ -73,7 +66,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.queue = queue
-		setupPlayer()
 	}
 
 	public convenience init(_ playerItem: AVPlayerItem) {
@@ -81,7 +73,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.playerItem = playerItem
-		setupPlayer()
 	}
 
 	required public init?(coder aDecoder: NSCoder) {
@@ -93,7 +84,6 @@ open class InStatPlayerView: UIView {
 
 		prepareToInit()
 		self.customControlView = customControlView
-		setupPlayer()
 	}
 
 	deinit {
@@ -195,8 +185,6 @@ open class InStatPlayerView: UIView {
 		player?.replaceCurrentItem(with: item)
 		delegate?.player?(self, ready: item, at: indexPath)
 		setupControls()
-
-		play()
 	}
 
 	func setupTimer() {
@@ -367,8 +355,8 @@ open class InStatPlayerView: UIView {
 	open func play() {
 
 		guard let item = player?.currentItem else { return }
-		player?.play()
 		setupTimer()
+		player?.play()
 		delegate?.player?(self, didPlay: item, at: indexPath)
 	}
 
