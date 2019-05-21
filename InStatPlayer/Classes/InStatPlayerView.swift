@@ -147,8 +147,9 @@ open class InStatPlayerView: UIView {
 	fileprivate func setupControls() {
 
 		if let customView = customControlView {
-
-			controlView.removeFromSuperview()
+			if controlView != nil {
+				controlView.removeFromSuperview()
+			}
 			controlView = customView
 		} else {
 
