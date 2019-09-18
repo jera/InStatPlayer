@@ -57,17 +57,17 @@ open class InStatControlView: UIView {
 		return view
 	}()
 
-	open var airplayButton: UIButton = {
-
-		let button = UIButton(type: .custom)
-		button.translatesAutoresizingMaskIntoConstraints = false
-		button.setImage(imageResourcePath("airplay"), for: .normal)
-		button.tintColor = .white
-		button.addTarget(self,
-						 action: #selector(airplayDidPress(_:)),
-						 for: .touchUpInside)
-		return button
-	}()
+//    open var airplayButton: UIButton = {
+//
+//        let button = UIButton(type: .custom)
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.setImage(imageResourcePath("airplay"), for: .normal)
+//        button.tintColor = .white
+//        button.addTarget(self,
+//                         action: #selector(airplayDidPress(_:)),
+//                         for: .touchUpInside)
+//        return button
+//    }()
 
 	open var playButton: UIButton = {
 
@@ -311,12 +311,12 @@ open class InStatControlView: UIView {
 		previousButton.centerYAnchor.constraint(equalTo: playButton.centerYAnchor).isActive = true
 		previousButton.widthAnchor.constraint(equalToConstant: 68).isActive = true
 		previousButton.heightAnchor.constraint(equalToConstant: 57).isActive = true
-
-		mainMaskView.addSubview(airplayButton)
-		airplayButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
-		airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
-		airplayButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
-		airplayButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
+//
+//        mainMaskView.addSubview(airplayButton)
+//        airplayButton.rightAnchor.constraint(equalTo: mainMaskView.rightAnchor, constant: -15).isActive = true
+//        airplayButton.topAnchor.constraint(equalTo: mainMaskView.topAnchor, constant: 15).isActive = true
+//        airplayButton.widthAnchor.constraint(equalToConstant: 35).isActive = true
+//        airplayButton.heightAnchor.constraint(equalToConstant: 28).isActive = true
 
 		mainMaskView.addSubview(videoGravityButton)
 		videoGravityButton.leftAnchor.constraint(equalTo: mainMaskView.leftAnchor, constant: 15).isActive = true
