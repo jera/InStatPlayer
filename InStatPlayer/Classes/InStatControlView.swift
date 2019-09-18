@@ -389,13 +389,25 @@ open class InStatControlView: UIView {
 
 	open func indicatorShow(_ show: Bool) {
 		indicatorView.isHidden = !show
+		if show {
+			isShowControlView(!show, animation:  false)
+		}
 	}
 
 	open func playbackChange(_ currentTime: TimeInterval, totalTime: TimeInterval) {
 
 		currentTimeLabel.text	= formatSecondsToString(currentTime)
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
-		progressSlider.value = Float(currentTime) / Float(totalTime)
+        let progress = Float(currentTime / totalTime)
+        
+        if isScrubbing == false {
+            // 0.25 - it is timer interval in InStatPlayerView
+            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: {
+                self.progressSlider.setValue(progress, animated: true)
+            }, completion: nil)
+        } else {
+            progressSlider.value = progress
+        }
 
 		if let player = playerView {
 
@@ -408,15 +420,22 @@ open class InStatControlView: UIView {
 		progressView.setProgress(Float(progress)/Float(total), animated: true)
 	}
 
-	open func isShowControlView(_ isShow: Bool) {
+	open func isShowControlView(_ isShow: Bool, animation: Bool = true) {
 
-		self.isMaskShowing = isShow
-		UIView.animate(withDuration: fadeDuration, animations: {
+		if animation {
+			self.isMaskShowing = isShow
+			UIView.animate(withDuration: fadeDuration, animations: {
+
+				self.mainMaskView.backgroundColor = UIColor(white: 0, alpha: isShow ? 0.5 : 0.0)
+				self.mainMaskView.alpha = isShow ? 1.0 : 0.0
+				self.layoutIfNeeded()
+			}) { (_) in if isShow { self.autoFadeControlView() } }
+		} else {
 
 			self.mainMaskView.backgroundColor = UIColor(white: 0, alpha: isShow ? 0.5 : 0.0)
 			self.mainMaskView.alpha = isShow ? 1.0 : 0.0
 			self.layoutIfNeeded()
-		}) { (_) in if isShow { self.autoFadeControlView() } }
+		}
 	}
 
 	open func autoFadeControlView() {
