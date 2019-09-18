@@ -357,6 +357,9 @@ open class InStatPlayerView: UIView {
 
 		guard let item = player?.currentItem else { return }
 		setupTimer()
+        
+        try? AVAudioSession.sharedInstance().setCategory(.playback)
+        
 		player?.play()
 		delegate?.player?(self, didPlay: item, at: indexPath)
 	}
