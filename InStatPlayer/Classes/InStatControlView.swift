@@ -375,7 +375,7 @@ open class InStatControlView: UIView {
 		switch state {
 		case .unknown: indicatorShow(true)
 		case .ready: indicatorShow(false)
-		case .buffering: indicatorShow(true)
+		case .buffering: indicatorShow(false)
 		case .bufferingForSomeTime: indicatorShow(false)
 		case .playing:
 			indicatorShow(false)
@@ -401,8 +401,8 @@ open class InStatControlView: UIView {
         let progress = Float(currentTime / totalTime)
         
         if isScrubbing == false {
-            // 0.25 - it is timer interval in InStatPlayerView
-            UIView.animate(withDuration: 0.25, delay: 0.0, options: .curveLinear, animations: {
+            // 0.30 - it is timer interval in InStatPlayerView
+            UIView.animate(withDuration: 030, delay: 0.0, options: .curveLinear, animations: {
                 self.progressSlider.setValue(progress, animated: true)
             }, completion: nil)
         } else {
