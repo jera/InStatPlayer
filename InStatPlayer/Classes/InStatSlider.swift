@@ -13,7 +13,7 @@ open class InStatSlider: UISlider {
 		result.origin.x = 0
 		result.origin.y = result.origin.y - 1
 		result.size.width = bounds.size.width
-		result.size.height = 3
+		result.size.height = 4
 		return result
 	}
 }
