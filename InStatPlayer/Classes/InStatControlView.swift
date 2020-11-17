@@ -6,7 +6,7 @@
 import UIKit
 import MediaPlayer
 
-public enum InStatPlayerState {
+public enum InStatPlayerState: String {
 
 	case unknown
 	case ready
@@ -370,7 +370,6 @@ open class InStatControlView: UIView {
 	// MARK: - Helpers
 
 	open func stateChange(_ state: InStatPlayerState) {
-
 		self.state = state
 		switch state {
 		case .unknown: indicatorShow(true)
@@ -399,15 +398,7 @@ open class InStatControlView: UIView {
 		currentTimeLabel.text	= formatSecondsToString(currentTime)
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
         let progress = Float(currentTime / totalTime)
-        
-        if isScrubbing == false {
-            // 0.30 - it is timer interval in InStatPlayerView
-            UIView.animate(withDuration: 030, delay: 0.0, options: .curveLinear, animations: {
-                self.progressSlider.setValue(progress, animated: true)
-            }, completion: nil)
-        } else {
-            progressSlider.value = progress
-        }
+        progressSlider.value = progress
 
 		if let player = playerView {
 
@@ -417,7 +408,10 @@ open class InStatControlView: UIView {
 	}
 
 	open func bufferChange(_ progress: TimeInterval, total: TimeInterval) {
-		progressView.setProgress(Float(progress)/Float(total), animated: true)
+        let progress: Float = Float(progress)/Float(total)
+        if progressView.progress < progress {
+            progressView.setProgress(progress, animated: true)
+        }
 	}
 
 	open func isShowControlView(_ isShow: Bool, animation: Bool = true) {
