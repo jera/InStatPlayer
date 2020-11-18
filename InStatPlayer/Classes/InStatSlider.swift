@@ -11,7 +11,7 @@ open class InStatSlider: UISlider {
 
 		var result = super.trackRect(forBounds: bounds)
 		result.origin.x = 0
-		result.origin.y = result.origin.y - 1
+		result.origin.y = result.origin.y - 1.5
 		result.size.width = bounds.size.width
 		result.size.height = 4
 		return result
