@@ -394,11 +394,14 @@ open class InStatControlView: UIView {
 	}
 
 	open func playbackChange(_ currentTime: TimeInterval, totalTime: TimeInterval) {
-
+		
 		currentTimeLabel.text	= formatSecondsToString(currentTime)
 		totalTimeLabel.text		= formatSecondsToString(totalTime)
-        let progress = Float(currentTime / totalTime)
-        progressSlider.value = progress
+        
+		if isScrubbing == false {
+			let progress = Float(currentTime / totalTime)
+			progressSlider.value = progress
+		}
 
 		if let player = playerView {
 
